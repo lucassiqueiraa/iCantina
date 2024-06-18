@@ -57,6 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\CantinaContext.cs" />
+    <Compile Include="Forms\FormEstudante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEstudante.Designer.cs">
+      <DependentUpon>FormEstudante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormExtras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,12 @@
     <Compile Include="Forms\FormPratos.Designer.cs">
       <DependentUpon>FormPratos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormProfessor.Designer.cs">
+      <DependentUpon>FormProfessor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormReservas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,11 +140,17 @@
     <Compile Include="Models\Utilizador.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FormEstudante.resx">
+      <DependentUpon>FormEstudante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormFuncionarios.resx">
       <DependentUpon>FormFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGestaoClientes.resx">
       <DependentUpon>FormGestaoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormProfessor.resx">
+      <DependentUpon>FormProfessor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>

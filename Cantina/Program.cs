@@ -19,10 +19,8 @@
             {
                 using (var db = new CantinaContext())
                 {
-                    var funcionario = new Funcionario { Id = 1, Nome = "Lucas Siqueira", NIF = 292692315, Username = "lucas" };
-                    db.Funcionarios.Add(funcionario);
-                    var prato = new Prato { Id = 1, Descricao = "Bacalhau á brás", Tipo = "Peixe", Ativo = true };
-                    db.Pratos.Add(prato);
+                    var extra = new Extra { Id = 1, Descricao = "Sopa Espinafre", Preco = 0.50M , Ativo = true };
+                    db.Extras.Add(extra);
                     db.SaveChanges();
                 }
 

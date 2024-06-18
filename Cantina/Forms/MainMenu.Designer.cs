@@ -43,9 +43,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblHoras = new System.Windows.Forms.Label();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.listaMenus = new System.Windows.Forms.DataGridView();
+            this.colCarne = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPeixe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVegetariano = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listaMenus)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -285,11 +291,52 @@
             this.lblHoras.TabIndex = 5;
             this.lblHoras.Text = "Horário";
             // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.monthCalendar1.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
+            this.monthCalendar1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monthCalendar1.Location = new System.Drawing.Point(511, 74);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 6;
+            // 
+            // listaMenus
+            // 
+            this.listaMenus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.listaMenus.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.listaMenus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listaMenus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colCarne,
+            this.colPeixe,
+            this.colVegetariano});
+            this.listaMenus.Location = new System.Drawing.Point(336, 319);
+            this.listaMenus.Name = "listaMenus";
+            this.listaMenus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.listaMenus.Size = new System.Drawing.Size(627, 227);
+            this.listaMenus.TabIndex = 8;
+            // 
+            // colCarne
+            // 
+            this.colCarne.HeaderText = "Carne";
+            this.colCarne.Name = "colCarne";
+            // 
+            // colPeixe
+            // 
+            this.colPeixe.HeaderText = "Peixe";
+            this.colPeixe.Name = "colPeixe";
+            // 
+            // colVegetariano
+            // 
+            this.colVegetariano.HeaderText = "Vegetariano";
+            this.colVegetariano.Name = "colVegetariano";
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 600);
+            this.Controls.Add(this.listaMenus);
+            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.lblHoras);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -304,6 +351,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listaMenus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,6 +374,11 @@
         private System.Windows.Forms.Button btnReservas;
         private System.Windows.Forms.Button btnExtras;
         private System.Windows.Forms.Label lblHoras;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.DataGridView listaMenus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCarne;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPeixe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colVegetariano;
     }
 }
 

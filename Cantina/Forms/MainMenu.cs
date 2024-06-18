@@ -58,5 +58,12 @@ namespace Cantina
         {
             this.Close();
         }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            FormGestaoClientes formGestaoClientes = new FormGestaoClientes();
+            formGestaoClientes.Show();
+            this.Hide();
+        }
     }
 }

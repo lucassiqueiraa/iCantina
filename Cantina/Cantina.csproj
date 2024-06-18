@@ -131,6 +131,9 @@
     <EmbeddedResource Include="Forms\FormFuncionarios.resx">
       <DependentUpon>FormFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGestaoClientes.resx">
+      <DependentUpon>FormGestaoClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>

@@ -95,7 +95,7 @@ namespace Cantina.Forms
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(251, 335);
+            this.button1.Location = new System.Drawing.Point(347, 340);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(187, 63);
             this.button1.TabIndex = 6;
@@ -105,7 +105,7 @@ namespace Cantina.Forms
             // 
             // btnGravarFuncionario
             // 
-            this.btnGravarFuncionario.Location = new System.Drawing.Point(24, 335);
+            this.btnGravarFuncionario.Location = new System.Drawing.Point(120, 340);
             this.btnGravarFuncionario.Name = "btnGravarFuncionario";
             this.btnGravarFuncionario.Size = new System.Drawing.Size(187, 63);
             this.btnGravarFuncionario.TabIndex = 7;
@@ -115,7 +115,7 @@ namespace Cantina.Forms
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(673, 335);
+            this.button3.Location = new System.Drawing.Point(562, 438);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(187, 63);
             this.button3.TabIndex = 8;
@@ -134,7 +134,7 @@ namespace Cantina.Forms
             // 
             // btnInativarFuncionario
             // 
-            this.btnInativarFuncionario.Location = new System.Drawing.Point(466, 335);
+            this.btnInativarFuncionario.Location = new System.Drawing.Point(562, 340);
             this.btnInativarFuncionario.Name = "btnInativarFuncionario";
             this.btnInativarFuncionario.Size = new System.Drawing.Size(187, 63);
             this.btnInativarFuncionario.TabIndex = 10;
@@ -144,7 +144,7 @@ namespace Cantina.Forms
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(24, 433);
+            this.button2.Location = new System.Drawing.Point(120, 438);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(187, 63);
             this.button2.TabIndex = 11;
@@ -154,7 +154,7 @@ namespace Cantina.Forms
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(251, 433);
+            this.button4.Location = new System.Drawing.Point(347, 438);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(187, 63);
             this.button4.TabIndex = 12;

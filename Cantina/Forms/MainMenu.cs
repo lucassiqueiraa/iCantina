@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cantina.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,18 @@ namespace Cantina
         public MainMenu()
         {
             InitializeComponent();
+        }
+
+        private void btnFuncionario_Click(object sender, EventArgs e)
+        {
+            FormFuncionarios formFuncionarios = new FormFuncionarios();
+            formFuncionarios.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

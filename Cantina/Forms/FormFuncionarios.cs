@@ -3,12 +3,14 @@ using Cantina.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Windows.Forms;
 
 namespace Cantina.Forms
 {
     public partial class FormFuncionarios : Form
     {
+        private int selectedFuncionarioId = -1; // aqui declarei o campo a utilizar par alterar 
         public FormFuncionarios()
         {
             InitializeComponent();
@@ -144,6 +146,86 @@ namespace Cantina.Forms
                         MessageBox.Show("Por favor, selecione um funcionário para inativar!");
                     }
                 }
+            }
+
+        }
+
+        private void btnEditarFuncionario_Click(object sender, EventArgs e)
+        {
+            if(listBoxFuncionarios.SelectedItem != null)
+            {
+                string selectedFuncionario = listBoxFuncionarios.SelectedItem.ToString();
+                int id = int.Parse(selectedFuncionario.Substring(4, selectedFuncionario.IndexOf(",") - 4));
+                using(var context = new CantinaContext()) 
+                {
+                    var funcionario = context.Funcionarios.Find( id);
+                    if(funcionario != null)
+                    {
+                        selectedFuncionarioId = funcionario.Id;
+                        textNome.Text = funcionario.Nome;
+                        textNif.Text = funcionario.NIF.ToString();
+                        textUsername.Text = funcionario.Username;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Funcionário não encontrado!");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um funcionario para editar!");
+            }
+        }
+
+        private void btnSalvarEdicao_Click(object sender, EventArgs e)
+        {
+            if(selectedFuncionarioId != 1)
+            {
+                string nome=textNome.Text.Trim();
+                string nifText = textNif.Text.Trim();
+                string username = textUsername.Text.Trim();
+
+                if(string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(nifText) ||string.IsNullOrEmpty(username)) 
+                {
+                    MessageBox.Show("Por favor, preencha todos os dados!!");
+                    return;
+                }
+                if(!int.TryParse(nifText, out int nif))
+                {
+                    MessageBox.Show("O NIF deve ser um número válido!!");
+                    return;
+                }
+                using(var context = new CantinaContext())
+                {
+                    var funcionario = context.Funcionarios.Find(selectedFuncionarioId);
+                    if(funcionario != null)
+                    {
+                        funcionario.Nome = nome;
+                        funcionario.NIF = nif;
+                        funcionario.Username = username;
+                        context.Entry(funcionario).State=System.Data.Entity.EntityState.Modified;
+                        context.SaveChanges();
+
+                        ListarFuncionarios();
+                        MessageBox.Show($"Funcionário {funcionario.Nome} (ID: {funcionario.Id}) foi atualizado.");
+                        
+                        textNome.Text = "";
+                        textNif.Text = "";
+                        textUsername.Text = "";
+                        selectedFuncionarioId = -1;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Funcionario nao encontrado.");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nenhum funcionário selecionado para edição.");
             }
 
         }

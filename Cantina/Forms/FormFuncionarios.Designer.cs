@@ -41,6 +41,8 @@ namespace Cantina.Forms
             this.button3 = new System.Windows.Forms.Button();
             this.listBoxFuncionarios = new System.Windows.Forms.ListBox();
             this.btnInativarFuncionario = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -125,7 +127,7 @@ namespace Cantina.Forms
             // 
             this.listBoxFuncionarios.FormattingEnabled = true;
             this.listBoxFuncionarios.ItemHeight = 25;
-            this.listBoxFuncionarios.Location = new System.Drawing.Point(24, 447);
+            this.listBoxFuncionarios.Location = new System.Drawing.Point(24, 528);
             this.listBoxFuncionarios.Name = "listBoxFuncionarios";
             this.listBoxFuncionarios.Size = new System.Drawing.Size(836, 154);
             this.listBoxFuncionarios.TabIndex = 9;
@@ -140,11 +142,33 @@ namespace Cantina.Forms
             this.btnInativarFuncionario.UseVisualStyleBackColor = true;
             this.btnInativarFuncionario.Click += new System.EventHandler(this.btnInativarFuncionario_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(24, 433);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(187, 63);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Editar Funcionario";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnEditarFuncionario_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(251, 433);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(187, 63);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "Gravar Edição Funcionario";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.btnSalvarEdicao_Click);
+            // 
             // FormFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1021, 638);
+            this.ClientSize = new System.Drawing.Size(1021, 742);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnInativarFuncionario);
             this.Controls.Add(this.listBoxFuncionarios);
             this.Controls.Add(this.button3);
@@ -177,5 +201,7 @@ namespace Cantina.Forms
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ListBox listBoxFuncionarios;
         private System.Windows.Forms.Button btnInativarFuncionario;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
     }
 }

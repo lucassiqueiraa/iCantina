@@ -38,8 +38,10 @@ namespace Autenticacao
             {
                 // Autenticação bem-sucedida, abre a tela principal do cliente
                 var form = new Cantina.MainMenu();
+                form.ClienteNome = username; // Atribui o nome do cliente autenticado
                 form.Show();
                 this.Hide();
+
             }
             else
             {

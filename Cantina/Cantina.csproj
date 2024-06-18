@@ -185,6 +185,21 @@
   <ItemGroup>
     <None Include="Assets\pratos2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\extra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\reserva.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\multa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\logout.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

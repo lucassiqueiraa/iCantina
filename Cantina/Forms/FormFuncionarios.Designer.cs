@@ -40,6 +40,7 @@ namespace Cantina.Forms
             this.btnGravarFuncionario = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.listBoxFuncionarios = new System.Windows.Forms.ListBox();
+            this.btnInativarFuncionario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -92,7 +93,7 @@ namespace Cantina.Forms
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(304, 335);
+            this.button1.Location = new System.Drawing.Point(251, 335);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(187, 63);
             this.button1.TabIndex = 6;
@@ -102,7 +103,7 @@ namespace Cantina.Forms
             // 
             // btnGravarFuncionario
             // 
-            this.btnGravarFuncionario.Location = new System.Drawing.Point(66, 335);
+            this.btnGravarFuncionario.Location = new System.Drawing.Point(24, 335);
             this.btnGravarFuncionario.Name = "btnGravarFuncionario";
             this.btnGravarFuncionario.Size = new System.Drawing.Size(187, 63);
             this.btnGravarFuncionario.TabIndex = 7;
@@ -112,7 +113,7 @@ namespace Cantina.Forms
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(533, 335);
+            this.button3.Location = new System.Drawing.Point(673, 335);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(187, 63);
             this.button3.TabIndex = 8;
@@ -124,16 +125,27 @@ namespace Cantina.Forms
             // 
             this.listBoxFuncionarios.FormattingEnabled = true;
             this.listBoxFuncionarios.ItemHeight = 25;
-            this.listBoxFuncionarios.Location = new System.Drawing.Point(66, 447);
+            this.listBoxFuncionarios.Location = new System.Drawing.Point(24, 447);
             this.listBoxFuncionarios.Name = "listBoxFuncionarios";
-            this.listBoxFuncionarios.Size = new System.Drawing.Size(712, 154);
+            this.listBoxFuncionarios.Size = new System.Drawing.Size(836, 154);
             this.listBoxFuncionarios.TabIndex = 9;
+            // 
+            // btnInativarFuncionario
+            // 
+            this.btnInativarFuncionario.Location = new System.Drawing.Point(466, 335);
+            this.btnInativarFuncionario.Name = "btnInativarFuncionario";
+            this.btnInativarFuncionario.Size = new System.Drawing.Size(187, 63);
+            this.btnInativarFuncionario.TabIndex = 10;
+            this.btnInativarFuncionario.Text = "Inativar Funcionario";
+            this.btnInativarFuncionario.UseVisualStyleBackColor = true;
+            this.btnInativarFuncionario.Click += new System.EventHandler(this.btnInativarFuncionario_Click);
             // 
             // FormFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1021, 638);
+            this.Controls.Add(this.btnInativarFuncionario);
             this.Controls.Add(this.listBoxFuncionarios);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnGravarFuncionario);
@@ -164,5 +176,6 @@ namespace Cantina.Forms
         private System.Windows.Forms.Button btnGravarFuncionario;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ListBox listBoxFuncionarios;
+        private System.Windows.Forms.Button btnInativarFuncionario;
     }
 }

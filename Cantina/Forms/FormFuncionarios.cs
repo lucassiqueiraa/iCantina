@@ -104,6 +104,47 @@ namespace Cantina.Forms
 
         private void FormFuncionarios_Load(object sender, EventArgs e)
         {
+            // Opcional: Chamar o método para listar funcionários ao carregar o formulário
+            // Assim, quando abrir o formulário ele automaticamente lista
+            // ListarFuncionarios();
+
+        }
+
+        private void btnInativarFuncionario_Click(object sender, EventArgs e)
+        {
+            //Primeiro vamos verificar se há algum item selecionado na ListBox
+            if(listBoxFuncionarios.SelectedItem != null) 
+            {
+                //obter o texto/informação do item selecionado
+                string selectedFuncionario =listBoxFuncionarios.SelectedItem.ToString();
+
+                //Agora é que são elas, Extraímos o ID do objeto selecionado
+                int startIndex = selectedFuncionario.IndexOf("ID : ")+4;
+                int endIndex= selectedFuncionario.IndexOf(", ",startIndex);
+                int id=int.Parse(selectedFuncionario.Substring(startIndex,endIndex - startIndex));
+
+                //Agaro inativamos o funcionário com id extraído acima.
+                using(var context = new CantinaContext())
+                {
+                    var funcionario = context.Funcionarios.Find(id);
+                    if(funcionario != null)
+                    {
+                        funcionario.Ativo = false;
+                        context.Entry(funcionario).State=System.Data.Entity.EntityState.Modified;
+                        context.SaveChanges();
+
+                        //agora atualizamos a lista de funcionarios, após a inativação 
+                        ListarFuncionarios();
+                        //Mensagem de inativação do funcionário inativado
+                        MessageBox.Show($"Funcionário {funcionario.Nome} (ID: {funcionario.Id}) foi inativado.");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Por favor, selecione um funcionário para inativar!");
+                    }
+                }
+            }
 
         }
     }

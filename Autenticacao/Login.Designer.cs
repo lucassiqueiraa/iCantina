@@ -31,13 +31,13 @@
             this.exit = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.login_username = new System.Windows.Forms.TextBox();
             this.login_nif = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.login_btn = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +73,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(265, 400);
             this.panel1.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Autenticacao.Properties.Resources.icons8_name_tag_375;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 38);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(243, 237);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(24, 291);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(217, 19);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "iCantina Management System";
             // 
             // label3
             // 
@@ -129,27 +150,6 @@
             this.login_btn.Text = "LOGIN";
             this.login_btn.UseVisualStyleBackColor = false;
             this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(27, 310);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(213, 19);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Cantina Management System";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Autenticacao.Properties.Resources.icons8_name_tag_375;
-            this.pictureBox1.Location = new System.Drawing.Point(22, 56);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(218, 237);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // loginForm
             // 

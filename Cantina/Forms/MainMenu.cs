@@ -13,9 +13,16 @@ namespace Cantina
 {
     public partial class MainMenu : Form
     {
+        public string ClienteNome { get; set; }
         public MainMenu()
         {
             InitializeComponent();
+        }
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            // Atualiza o rótulo com o nome do cliente
+            funcionarioUsername.Text += ClienteNome;
         }
 
         private void btnFuncionario_Click(object sender, EventArgs e)
@@ -29,5 +36,7 @@ namespace Cantina
         {
             this.Close();
         }
+
+       
     }
 }

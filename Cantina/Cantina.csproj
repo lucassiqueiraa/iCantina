@@ -105,6 +105,15 @@
     <Compile Include="Forms\MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202406172043380_InitialCreate.cs" />
+    <Compile Include="Migrations\202406172043380_InitialCreate.Designer.cs">
+      <DependentUpon>202406172043380_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406181919194_AddAtivoToUtilizador.cs" />
+    <Compile Include="Migrations\202406181919194_AddAtivoToUtilizador.Designer.cs">
+      <DependentUpon>202406181919194_AddAtivoToUtilizador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Estudante.cs" />
     <Compile Include="Models\Extra.cs" />
@@ -124,6 +133,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406172043380_InitialCreate.resx">
+      <DependentUpon>202406172043380_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406181919194_AddAtivoToUtilizador.resx">
+      <DependentUpon>202406181919194_AddAtivoToUtilizador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

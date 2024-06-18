@@ -22,7 +22,16 @@ namespace Autenticacao
         private void login_btn_Click(object sender, EventArgs e)
         {
             string username = login_username.Text;
-            int nif = int.Parse(login_nif.Text);
+            string nifText = login_nif.Text;
+
+            //Verificação de nif válido 
+            if(!int.TryParse(nifText, out int nif))
+            {
+                MessageBox.Show("O NIF deve ser um número válido!");
+                login_nif.Focus();
+                return;
+            }
+           
 
             // Chama o método Authenticate no AuthController para autenticar o usuário
             if (AuthController.Authenticate(username, nif))

@@ -37,8 +37,9 @@ namespace Cantina.Forms
             this.textNif = new System.Windows.Forms.TextBox();
             this.textUsername = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnGravarFuncionario = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.listBoxFuncionarios = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -91,7 +92,7 @@ namespace Cantina.Forms
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(88, 335);
+            this.button1.Location = new System.Drawing.Point(304, 335);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(187, 63);
             this.button1.TabIndex = 6;
@@ -99,15 +100,15 @@ namespace Cantina.Forms
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnListarFuncionarios_Click);
             // 
-            // button2
+            // btnGravarFuncionario
             // 
-            this.button2.Location = new System.Drawing.Point(304, 335);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(187, 63);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Gravar Funcionario";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btnGravarFuncionario_Click);
+            this.btnGravarFuncionario.Location = new System.Drawing.Point(66, 335);
+            this.btnGravarFuncionario.Name = "btnGravarFuncionario";
+            this.btnGravarFuncionario.Size = new System.Drawing.Size(187, 63);
+            this.btnGravarFuncionario.TabIndex = 7;
+            this.btnGravarFuncionario.Text = "Gravar Funcionario";
+            this.btnGravarFuncionario.UseVisualStyleBackColor = true;
+            this.btnGravarFuncionario.Click += new System.EventHandler(this.btnGravarFuncionario_Click);
             // 
             // button3
             // 
@@ -119,13 +120,23 @@ namespace Cantina.Forms
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.btnVoltarMenuPrincipal_Click);
             // 
+            // listBoxFuncionarios
+            // 
+            this.listBoxFuncionarios.FormattingEnabled = true;
+            this.listBoxFuncionarios.ItemHeight = 25;
+            this.listBoxFuncionarios.Location = new System.Drawing.Point(66, 447);
+            this.listBoxFuncionarios.Name = "listBoxFuncionarios";
+            this.listBoxFuncionarios.Size = new System.Drawing.Size(712, 154);
+            this.listBoxFuncionarios.TabIndex = 9;
+            // 
             // FormFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1021, 638);
+            this.Controls.Add(this.listBoxFuncionarios);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnGravarFuncionario);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textUsername);
             this.Controls.Add(this.textNif);
@@ -135,6 +146,7 @@ namespace Cantina.Forms
             this.Controls.Add(this.label1);
             this.Name = "FormFuncionarios";
             this.Text = "Funcionário";
+            this.Load += new System.EventHandler(this.FormFuncionarios_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,7 +161,8 @@ namespace Cantina.Forms
         private System.Windows.Forms.TextBox textNif;
         private System.Windows.Forms.TextBox textUsername;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnGravarFuncionario;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ListBox listBoxFuncionarios;
     }
 }

@@ -1,0 +1,44 @@
+﻿using Autenticacao.Controllers;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Autenticacao
+{
+    public partial class loginForm : Form
+    {
+        public loginForm()
+        {
+            InitializeComponent();
+        }
+
+        private void login_btn_Click(object sender, EventArgs e)
+        {
+            string username = login_username.Text;
+            int nif = int.Parse(login_nif.Text);
+
+            // Chama o método Authenticate no AuthController para autenticar o usuário
+            if (AuthController.Authenticate(username, nif))
+            {
+                // Autenticação bem-sucedida, abre a tela principal do cliente
+                var form = new MainMenu();
+                form.Show();
+                this.Hide();
+            }
+            else
+            {
+                // Usuário não está registrado ou a senha está incorreta
+                MessageBox.Show("Invalid Username or NIF");
+                login_username.Text = "";
+                login_nif.Text = "";
+                login_username.Focus();
+            }
+        }
+    }
+}

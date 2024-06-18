@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Cantina;
 
 namespace Autenticacao
 {
@@ -27,7 +28,7 @@ namespace Autenticacao
             if (AuthController.Authenticate(username, nif))
             {
                 // Autenticação bem-sucedida, abre a tela principal do cliente
-                var form = new MainMenu();
+                var form = new Cantina.MainMenu();
                 form.Show();
                 this.Hide();
             }

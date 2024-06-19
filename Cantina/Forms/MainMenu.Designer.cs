@@ -68,9 +68,10 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btnFuncionarios);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 35);
+            this.panel2.Location = new System.Drawing.Point(0, 65);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(225, 565);
+            this.panel2.Size = new System.Drawing.Size(450, 1089);
             this.panel2.TabIndex = 4;
             // 
             // btnMultas
@@ -84,10 +85,10 @@
             this.btnMultas.ForeColor = System.Drawing.Color.White;
             this.btnMultas.Image = global::Cantina.Properties.Resources.multa;
             this.btnMultas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMultas.Location = new System.Drawing.Point(11, 443);
-            this.btnMultas.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMultas.Location = new System.Drawing.Point(22, 852);
+            this.btnMultas.Margin = new System.Windows.Forms.Padding(4);
             this.btnMultas.Name = "btnMultas";
-            this.btnMultas.Size = new System.Drawing.Size(200, 40);
+            this.btnMultas.Size = new System.Drawing.Size(400, 77);
             this.btnMultas.TabIndex = 12;
             this.btnMultas.Text = "Multas";
             this.btnMultas.UseVisualStyleBackColor = false;
@@ -103,10 +104,10 @@
             this.btnPratos.ForeColor = System.Drawing.Color.White;
             this.btnPratos.Image = global::Cantina.Properties.Resources.pratos2;
             this.btnPratos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPratos.Location = new System.Drawing.Point(11, 125);
-            this.btnPratos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPratos.Location = new System.Drawing.Point(22, 240);
+            this.btnPratos.Margin = new System.Windows.Forms.Padding(4);
             this.btnPratos.Name = "btnPratos";
-            this.btnPratos.Size = new System.Drawing.Size(200, 40);
+            this.btnPratos.Size = new System.Drawing.Size(400, 77);
             this.btnPratos.TabIndex = 11;
             this.btnPratos.Text = "Pratos";
             this.btnPratos.UseVisualStyleBackColor = false;
@@ -121,10 +122,10 @@
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Image = global::Cantina.Properties.Resources.logout;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(2, 503);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogout.Location = new System.Drawing.Point(4, 967);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(59, 60);
+            this.btnLogout.Size = new System.Drawing.Size(118, 115);
             this.btnLogout.TabIndex = 2;
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -140,10 +141,10 @@
             this.btnReservas.ForeColor = System.Drawing.Color.White;
             this.btnReservas.Image = global::Cantina.Properties.Resources.reserva;
             this.btnReservas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReservas.Location = new System.Drawing.Point(11, 284);
-            this.btnReservas.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReservas.Location = new System.Drawing.Point(22, 546);
+            this.btnReservas.Margin = new System.Windows.Forms.Padding(4);
             this.btnReservas.Name = "btnReservas";
-            this.btnReservas.Size = new System.Drawing.Size(200, 40);
+            this.btnReservas.Size = new System.Drawing.Size(400, 77);
             this.btnReservas.TabIndex = 9;
             this.btnReservas.Text = "Reservas";
             this.btnReservas.UseVisualStyleBackColor = false;
@@ -159,10 +160,10 @@
             this.btnMenus.ForeColor = System.Drawing.Color.White;
             this.btnMenus.Image = global::Cantina.Properties.Resources.menu;
             this.btnMenus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenus.Location = new System.Drawing.Point(11, 231);
-            this.btnMenus.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMenus.Location = new System.Drawing.Point(22, 444);
+            this.btnMenus.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenus.Name = "btnMenus";
-            this.btnMenus.Size = new System.Drawing.Size(200, 40);
+            this.btnMenus.Size = new System.Drawing.Size(400, 77);
             this.btnMenus.TabIndex = 8;
             this.btnMenus.Text = "Menus";
             this.btnMenus.UseVisualStyleBackColor = false;
@@ -178,13 +179,14 @@
             this.btnExtras.ForeColor = System.Drawing.Color.White;
             this.btnExtras.Image = global::Cantina.Properties.Resources.extra;
             this.btnExtras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExtras.Location = new System.Drawing.Point(11, 178);
-            this.btnExtras.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExtras.Location = new System.Drawing.Point(22, 342);
+            this.btnExtras.Margin = new System.Windows.Forms.Padding(4);
             this.btnExtras.Name = "btnExtras";
-            this.btnExtras.Size = new System.Drawing.Size(200, 40);
+            this.btnExtras.Size = new System.Drawing.Size(400, 77);
             this.btnExtras.TabIndex = 10;
             this.btnExtras.Text = "Extras";
             this.btnExtras.UseVisualStyleBackColor = false;
+            this.btnExtras.Click += new System.EventHandler(this.btnExtras_Click);
             // 
             // btnClientes
             // 
@@ -197,31 +199,34 @@
             this.btnClientes.ForeColor = System.Drawing.Color.White;
             this.btnClientes.Image = global::Cantina.Properties.Resources.icons8_client_management_50;
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(11, 337);
-            this.btnClientes.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClientes.Location = new System.Drawing.Point(22, 648);
+            this.btnClientes.Margin = new System.Windows.Forms.Padding(4);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(200, 40);
+            this.btnClientes.Size = new System.Drawing.Size(400, 77);
             this.btnClientes.TabIndex = 7;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // funcionarioUsername
             // 
             this.funcionarioUsername.AutoSize = true;
             this.funcionarioUsername.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.funcionarioUsername.ForeColor = System.Drawing.Color.White;
-            this.funcionarioUsername.Location = new System.Drawing.Point(41, 88);
+            this.funcionarioUsername.Location = new System.Drawing.Point(82, 169);
+            this.funcionarioUsername.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.funcionarioUsername.Name = "funcionarioUsername";
-            this.funcionarioUsername.Size = new System.Drawing.Size(97, 19);
+            this.funcionarioUsername.Size = new System.Drawing.Size(191, 39);
             this.funcionarioUsername.TabIndex = 5;
             this.funcionarioUsername.Text = "Bem-Vindo, ";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Cantina.Properties.Resources.team;
-            this.pictureBox1.Location = new System.Drawing.Point(58, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(116, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 94);
+            this.pictureBox1.Size = new System.Drawing.Size(200, 181);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -236,10 +241,10 @@
             this.btnFuncionarios.ForeColor = System.Drawing.Color.White;
             this.btnFuncionarios.Image = global::Cantina.Properties.Resources.icons8_management_50;
             this.btnFuncionarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFuncionarios.Location = new System.Drawing.Point(11, 390);
-            this.btnFuncionarios.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFuncionarios.Location = new System.Drawing.Point(22, 750);
+            this.btnFuncionarios.Margin = new System.Windows.Forms.Padding(4);
             this.btnFuncionarios.Name = "btnFuncionarios";
-            this.btnFuncionarios.Size = new System.Drawing.Size(200, 40);
+            this.btnFuncionarios.Size = new System.Drawing.Size(400, 77);
             this.btnFuncionarios.TabIndex = 0;
             this.btnFuncionarios.Text = "Funcionários";
             this.btnFuncionarios.UseVisualStyleBackColor = false;
@@ -251,9 +256,10 @@
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1073, 9);
+            this.label1.Location = new System.Drawing.Point(2146, 17);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 16);
+            this.label1.Size = new System.Drawing.Size(32, 31);
             this.label1.TabIndex = 4;
             this.label1.Text = "X";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -263,9 +269,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(11, 9);
+            this.label2.Location = new System.Drawing.Point(22, 17);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 16);
+            this.label2.Size = new System.Drawing.Size(360, 31);
             this.label2.TabIndex = 5;
             this.label2.Text = "iCantina Management System";
             // 
@@ -277,17 +284,19 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1100, 35);
+            this.panel1.Size = new System.Drawing.Size(2200, 65);
             this.panel1.TabIndex = 3;
             // 
             // lblHoras
             // 
             this.lblHoras.AutoSize = true;
             this.lblHoras.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHoras.Location = new System.Drawing.Point(1002, 48);
+            this.lblHoras.Location = new System.Drawing.Point(2004, 92);
+            this.lblHoras.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblHoras.Name = "lblHoras";
-            this.lblHoras.Size = new System.Drawing.Size(62, 19);
+            this.lblHoras.Size = new System.Drawing.Size(121, 39);
             this.lblHoras.TabIndex = 5;
             this.lblHoras.Text = "Horário";
             // 
@@ -332,16 +341,19 @@
             // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+calendario
             this.ClientSize = new System.Drawing.Size(1100, 600);
             this.Controls.Add(this.listaMenus);
             this.Controls.Add(this.monthCalendar1);
+
+ main
             this.Controls.Add(this.lblHoras);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace Cantina.Models
 {
-    public abstract class Cliente : Utilizador
+    public   class Cliente : Utilizador
     {
         public decimal Saldo { get; set; }
-        ///<summary>
-        ///Aqui será logo implementado a lógica para a base de dados.
-        /// </summary>
+    
         public void AdicionarCredito(decimal valor)
         {
             Saldo += valor;

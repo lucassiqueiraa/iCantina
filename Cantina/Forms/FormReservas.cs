@@ -10,6 +10,7 @@ using Menu = Cantina.Models.Menu;
 using System.Runtime.Remoting.Contexts;
 using iTextSharp.text.pdf;
 using iTextSharp.text;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Cantina.Forms
 {
@@ -84,18 +85,33 @@ namespace Cantina.Forms
         {
             using (var context = new CantinaContext())
             {
-                var extras = context.Extras
-                    .Where(e => e.Ativo) // Considera apenas extras ativos
-                    .ToList();
+                /* var extras = context.Extras
+                     .Where(e => e.Ativo) // Considera apenas extras ativos
+                     .ToList();
 
-                // Limpa a lista atual de extras no ListBox
-                listBoxExtras.Items.Clear();
+                 // Limpa a lista atual de extras no ListBox
+                 listBoxExtras.Items.Clear();
 
-                // Adiciona os extras ao ListBox
-                foreach (var extra in extras)
-                {
-                    listBoxExtras.Items.Add(extra);
-                }
+                 // Adiciona os extras ao ListBox
+                 foreach (var extra in extras)
+                 {
+                     listBoxExtras.Items.Add(extra);
+                 }*/
+                
+                    // Carregar os extras disponíveis para o menu selecionado
+                    var extrasDisponiveis = context.Extras
+                        .Where(e => e.Ativo) // Considera apenas extras ativos
+                        .ToList();
+
+                    // Limpa a lista atual de extras no ListBox
+                    listBoxExtras.Items.Clear();
+
+                    // Adiciona os extras ao ListBox
+                    foreach (var extra in extrasDisponiveis)
+                    {
+                        listBoxExtras.Items.Add(extra); // Aqui adicionamos o objeto Extra diretamente
+                    }
+                
             }
         }
 
@@ -239,44 +255,62 @@ namespace Cantina.Forms
             }
         }
 
-        private void GerarFaturaPDF(Menu menu, List<Extra> extrasSelecionados, decimal valorTotal)
+        private string GerarFaturaPDF(Menu menu, List<Extra> extrasSelecionados, decimal valorTotal)
         {
             // Implemente lógica para gerar fatura simplificada em PDF
+            string diretorioDestino = @"C:\fatura"; // Exemplo de caminho absoluto
+
+            if (!Directory.Exists(diretorioDestino))
+            {
+                Directory.CreateDirectory(diretorioDestino);
+            }
+
             string nomeArquivo = $"Fatura_{DateTime.Now:yyyyMMddHHmmss}.pdf";
+            string caminhoCompleto = Path.Combine(diretorioDestino, nomeArquivo);
 
-            Document doc = new Document();
-            PdfWriter.GetInstance(doc, new FileStream(nomeArquivo, FileMode.Create));
-            doc.Open();
-
-            doc.Add(new Paragraph($"Fatura Simplificada - Data: {DateTime.Now}"));
-            doc.Add(new Paragraph($"Cliente: {selectedClienteId}")); // Exemplo básico, substituir pelo nome do cliente
-
-            doc.Add(new Paragraph($"Menu: {menu.DataHora.ToShortDateString()}"));
-            doc.Add(new Paragraph($"Preço do Menu: {menu.PrecoEstudante:C}"));
-
-            // Adicione detalhes dos extras selecionados
-            if (extrasSelecionados.Any())
+            try
             {
-                doc.Add(new Paragraph("Extras:"));
-                foreach (var extra in extrasSelecionados)
+                Document doc = new Document();
+                PdfWriter.GetInstance(doc, new FileStream(caminhoCompleto, FileMode.Create));
+                doc.Open();
+
+                doc.Add(new Paragraph($"Fatura Simplificada - Data: {DateTime.Now}"));
+                doc.Add(new Paragraph($"Cliente: {selectedClienteId}")); // Exemplo básico, substituir pelo nome do cliente
+
+                doc.Add(new Paragraph($"Menu: {menu.DataHora.ToShortDateString()}"));
+                doc.Add(new Paragraph($"Preço do Menu: {menu.PrecoEstudante:C}"));
+
+                // Adicione detalhes dos extras selecionados
+                if (extrasSelecionados.Any())
                 {
-                    doc.Add(new Paragraph($"- {extra.Descricao} - Preço: {extra.Preco:C}"));
+                    doc.Add(new Paragraph("Extras:"));
+                    foreach (var extra in extrasSelecionados)
+                    {
+                        doc.Add(new Paragraph($"- {extra.Descricao} - Preço: {extra.Preco:C}"));
+                    }
                 }
+                else
+                {
+                    doc.Add(new Paragraph("Sem Extras."));
+                }
+
+                // Adicione detalhes das multas (se houver)
+                if (VerificarPeriodoMulta())
+                {
+                    doc.Add(new Paragraph("Multa Aplicada: 1€")); // Exemplo básico, substituir por lógica real de multas
+                }
+
+                doc.Add(new Paragraph($"Total: {valorTotal:C}"));
+
+                doc.Close();
+
+                return caminhoCompleto; // Retorna o caminho completo do arquivo gerado
             }
-            else
+            catch (Exception ex)
             {
-                doc.Add(new Paragraph("Sem Extras."));
+                MessageBox.Show($"Ocorreu um erro ao gerar a fatura: {ex.Message}");
+                return null; // Retorna null em caso de erro
             }
-
-            // Adicione detalhes das multas (se houver)
-            if (VerificarPeriodoMulta())
-            {
-                doc.Add(new Paragraph("Multa Aplicada: 1€")); // Exemplo básico, substituir por lógica real de multas
-            }
-
-            doc.Add(new Paragraph($"Total: {valorTotal:C}"));
-
-            doc.Close();
         }
 
         private void btnMenuPrincipal_Click(object sender, EventArgs e)
@@ -284,6 +318,45 @@ namespace Cantina.Forms
             MainMenu mainMenu = new MainMenu();
             mainMenu.Show();
             this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (selectedClienteId != -1 && listBoxMenus.SelectedItem != null)
+            {
+                Menu menu = (Menu)listBoxMenus.SelectedItem;
+                List<Extra> extrasSelecionados = listBoxExtras.SelectedItems.Cast<Extra>().ToList();
+
+                // Calcular valor total da reserva
+                decimal valorTotal = CalcularValorTotalReserva(menu, extrasSelecionados);
+
+                // Gerar fatura simplificada em PDF
+                string caminhoFatura = GerarFaturaPDF(menu, extrasSelecionados, valorTotal);
+
+                // Verifica se o arquivo foi gerado corretamente
+                if (!string.IsNullOrEmpty(caminhoFatura))
+                {
+                    // Abrir o arquivo PDF gerado
+                    try
+                    {
+                        System.Diagnostics.Process.Start(caminhoFatura);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Ocorreu um erro ao abrir a fatura: {ex.Message}");
+                    }
+
+                    MessageBox.Show("Fatura gerada e aberta com sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show("Ocorreu um erro ao gerar a fatura.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecione um cliente e um menu para gerar a fatura.");
+            }
         }
     }
 }

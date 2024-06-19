@@ -121,6 +121,7 @@
             this.dateTime.Name = "dateTime";
             this.dateTime.Size = new System.Drawing.Size(200, 20);
             this.dateTime.TabIndex = 6;
+            this.dateTime.Value = new System.DateTime(2024, 6, 19, 0, 0, 0, 0);
             // 
             // qtd
             // 
@@ -289,6 +290,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormMenu";
             this.Text = "FormMenu";
+            this.Load += new System.EventHandler(this.FormMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.qtd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();

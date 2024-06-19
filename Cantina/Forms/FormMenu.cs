@@ -1,13 +1,10 @@
 ﻿using Cantina.Data;
 using Cantina.Models;
+using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
-using Newtonsoft.Json;
 
 namespace Cantina.Forms
 {
@@ -24,20 +21,6 @@ namespace Cantina.Forms
             LoadMenus();
         }
 
-       
-
-        public static T Clone<T>(T source)
-    {
-        if (Object.ReferenceEquals(source, null))
-        {
-            return default(T);
-        }
-
-        // Serializa o objeto para uma string JSON e depois deserializa de volta para um novo objeto.
-        var deserializeSettings = new JsonSerializerSettings { ObjectCreationHandling = ObjectCreationHandling.Replace };
-        return JsonConvert.DeserializeObject<T>(JsonConvert.SerializeObject(source), deserializeSettings);
-    }
-
         private void ConfigurarDataGridView()
         {
             dataGridViewMenus.AutoGenerateColumns = false;
@@ -48,8 +31,22 @@ namespace Cantina.Forms
             dataGridViewMenus.Columns.Add(new DataGridViewTextBoxColumn() { Name = "QtdDisponivel", HeaderText = "Quantidade", DataPropertyName = "QtdDisponivel" });
             dataGridViewMenus.Columns.Add(new DataGridViewTextBoxColumn() { Name = "PrecoEstudante", HeaderText = "Preço Estudante", DataPropertyName = "PrecoEstudante" });
             dataGridViewMenus.Columns.Add(new DataGridViewTextBoxColumn() { Name = "PrecoProfessor", HeaderText = "Preço Professor", DataPropertyName = "PrecoProfessor" });
-            dataGridViewMenus.Columns.Add(new DataGridViewTextBoxColumn() { Name = "Pratos", HeaderText = "Prato", DataPropertyName = "Pratos" });
-            dataGridViewMenus.Columns.Add(new DataGridViewTextBoxColumn() { Name = "Extras", HeaderText = "Extra", DataPropertyName = "Extras" });
+
+            // Coluna para exibir os pratos
+            DataGridViewTextBoxColumn pratosColumn = new DataGridViewTextBoxColumn();
+            pratosColumn.Name = "Pratos";
+            pratosColumn.HeaderText = "Pratos";
+            pratosColumn.DataPropertyName = "Pratos"; // Nome da propriedade no objeto Menu
+            dataGridViewMenus.Columns.Add(pratosColumn);
+
+            // Coluna para exibir os extras
+            DataGridViewTextBoxColumn extrasColumn = new DataGridViewTextBoxColumn();
+            extrasColumn.Name = "Extras";
+            extrasColumn.HeaderText = "Extras";
+            extrasColumn.DataPropertyName = "Extras"; // Nome da propriedade no objeto Menu
+            dataGridViewMenus.Columns.Add(extrasColumn);
+
+            
         }
 
         private void CarregarPratosExtras()
@@ -83,7 +80,6 @@ namespace Cantina.Forms
             {
                 int menuId = (int)dataGridViewMenus.SelectedRows[0].Cells["Id"].Value;
                 menu = _context.Menus.Include(m => m.Pratos).Include(m => m.Extras).FirstOrDefault(m => m.Id == menuId);
-
             }
             else
             {
@@ -121,9 +117,7 @@ namespace Cantina.Forms
         {
             return new Prato
             {
-                // Copie todas as propriedades necessárias aqui
                 Descricao = prato.Descricao,
-                // ... outras propriedades
             };
         }
 
@@ -132,12 +126,9 @@ namespace Cantina.Forms
         {
             return new Extra
             {
-                // Copie todas as propriedades necessárias aqui
                 Descricao = extra.Descricao,
-                // ... outras propriedades
             };
         }
-
 
         private void LoadMenus()
         {
@@ -154,7 +145,7 @@ namespace Cantina.Forms
                 row.CreateCells(dataGridViewMenus);
 
                 row.Cells[0].Value = menu.Id;
-                row.Cells[1].Value = menu.DataHora;
+                row.Cells[1].Value = menu.DataHora.ToString("dd/MM/yyyy HH:mm:ss"); // Formate conforme necessário
                 row.Cells[2].Value = menu.QtdDisponivel;
                 row.Cells[3].Value = menu.PrecoEstudante;
                 row.Cells[4].Value = menu.PrecoProfessor;
@@ -170,6 +161,7 @@ namespace Cantina.Forms
                 LimparCampos();
             }
         }
+
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -221,7 +213,7 @@ namespace Cantina.Forms
             }
             else
             {
-                MessageBox.Show("Menu excluído com sucesso!");
+                MessageBox.Show("Erro ao excluir o menu. Tente novamente.");
             }
         }
 
@@ -268,8 +260,27 @@ namespace Cantina.Forms
             mainMenu.Show(this);
             this.Hide();
         }
+
+        private void FormMenu_Load(object sender, EventArgs e)
+        {
+            dateTime.Format = DateTimePickerFormat.Custom;
+            dateTime.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            dateTime.ShowUpDown = true;
+        }
+
+        private void dataGridViewMenus_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                if (dataGridViewMenus.Columns[e.ColumnIndex].Name == "Editar")
+                {
+                    btnEditar_Click(sender, e);
+                }
+                else if (dataGridViewMenus.Columns[e.ColumnIndex].Name == "Excluir")
+                {
+                    btnExcluir_Click(sender, e);
+                }
+            }
+        }
     }
 }
-
-
-

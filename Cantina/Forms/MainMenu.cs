@@ -140,10 +140,10 @@ namespace Cantina
             this.Hide();
         }
 
-        private void btnReservas_Click(object sender, EventArgs e)
+        private void btnPratos_Click(object sender, EventArgs e)
         {
-            FormReservas formReservas = new FormReservas();
-            formReservas.Show();
+            FormPratos formPratos = new FormPratos();
+            formPratos.Show();
             this.Hide();
         }
     }

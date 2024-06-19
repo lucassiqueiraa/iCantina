@@ -22,7 +22,11 @@ namespace Cantina.Models
             Pratos = new List<Prato>();
             Extras = new List<Extra>();
         }
-       
+        public override string ToString()
+        {
+            return $"Menu ID: {Id} - Data: {DataHora.ToShortDateString()} - Preço Estudante: {PrecoEstudante:C} - Preço Professor: {PrecoProfessor:C} - Disponível: {QtdDisponivel}";
+        }
+
     }
     
 }

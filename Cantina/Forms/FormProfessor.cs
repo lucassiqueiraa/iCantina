@@ -23,7 +23,7 @@ namespace Cantina.Forms
             string nifText = textNif.Text.Trim();
             string email = textEmail.Text.Trim();
             string creditoText = textAporteCredito.Text.Trim();
-           
+
 
             // Validação básica na entrada de informações
             if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(nifText) || string.IsNullOrEmpty(creditoText) || string.IsNullOrEmpty(email))
@@ -50,20 +50,20 @@ namespace Cantina.Forms
                 Saldo = credito
             };
 
-          
-                using (var context = new CantinaContext())
-                {
-                    context.Professores.Add(professor);
-                    context.SaveChanges();
-                }
 
-                textNome.Text = "";
-                textNif.Text = "";
-                textAporteCredito.Text = "";
-                textEmail.Text = "";
+            using (var context = new CantinaContext())
+            {
+                context.Professores.Add(professor);
+                context.SaveChanges();
+            }
 
-                ListarProfessores();
-            
+            textNome.Text = "";
+            textNif.Text = "";
+            textAporteCredito.Text = "";
+            textEmail.Text = "";
+
+            ListarProfessores();
+
         }
 
         private void ListarProfessores()
@@ -233,6 +233,79 @@ namespace Cantina.Forms
             MainMenu mainMenu = new MainMenu();
             mainMenu.Show(this);
             this.Hide();
+        }
+
+        private void btnBuscarProfessorPorNif_Click(object sender, EventArgs e)
+        {
+            string nifText = textBuscaNif.Text.Trim();
+
+            if (!int.TryParse(nifText, out int nif))
+            {
+                MessageBox.Show("O NIF deve ser um número válido!");
+                return;
+            }
+            using (var context = new CantinaContext())
+            {
+                var professor = context.Professores.FirstOrDefault(c => c.NIF == nif);
+                if (professor != null)
+                {
+                    selectedProfessorId = professor.Id;
+                    textNome.Text = professor.Nome;
+                    textNif.Text = professor.NIF.ToString();
+                    textEmail.Text = professor.Email;
+                    textAporteCredito.Enabled = false;
+                    textCreditoAdicional.Enabled = true;
+                    MessageBox.Show($"Professor {professor.Nome} (ID: {professor.Id}) encontrado.");
+                }
+                else
+                {
+                    MessageBox.Show("Professor não encontrado!");
+                }
+            }
+        }
+
+        private void btnAdicionarCredito_Click(object sender, EventArgs e)
+        {
+            if (selectedProfessorId != -1)
+            {
+                string creditoAdicionalText = textCreditoAdicional.Text.Trim();
+
+                if (!decimal.TryParse(creditoAdicionalText, out decimal creditoAdicional))
+                {
+                    MessageBox.Show("O valor do crédito adicional deve ser um número válido.");
+                    return;
+                }
+
+                using (var context = new CantinaContext())
+                {
+                    var professor = context.Professores.Find(selectedProfessorId);
+                    if (professor != null)
+                    {
+                        professor.Saldo += creditoAdicional;
+                        context.Entry(professor).State = EntityState.Modified;
+                        context.SaveChanges();
+
+                        ListarProfessores();
+                        MessageBox.Show($"Crédito adicionado com sucesso! Novo saldo de {professor.Nome} (ID: {professor.Id}) é {professor.Saldo:C}");
+
+                        textCreditoAdicional.Text = "";
+                        textNome.Text = "";
+                        textNif.Text = "";
+                        textEmail.Text = "";
+                        textAporteCredito.Enabled = true;
+                        textCreditoAdicional.Enabled = false;
+                        selectedProfessorId = -1;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Professor não encontrado.");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, busque um professor pelo NIF ou selecione um professor na lista!");
+            }
         }
     }
 }

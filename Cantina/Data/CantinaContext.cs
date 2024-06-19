@@ -23,5 +23,21 @@ namespace Cantina.Data
         public DbSet<Fatura> Faturas { get; set; }
         public DbSet<ItemFatura> ItensFatura { get; set; }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            
+
+            // Adicione esta configuração para a propriedade DataHora
+            modelBuilder.Entity<Menu>()
+                .Property(m => m.DataHora)
+                .HasColumnType("datetime2");
+
+            // Outras configurações...
+
+            base.OnModelCreating(modelBuilder);
+        }
+
+
     }
+
 }

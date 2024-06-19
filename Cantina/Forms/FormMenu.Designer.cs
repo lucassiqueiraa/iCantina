@@ -45,8 +45,16 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.dataGridViewMenus = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QtdDisponivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecoEstudante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecoProfessor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pratos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Extras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataSet1 = new Cantina.DataSet1();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnVoltarMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.qtd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -186,6 +194,14 @@
             this.dataGridViewMenus.AllowUserToOrderColumns = true;
             this.dataGridViewMenus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewMenus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMenus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.DataHora,
+            this.QtdDisponivel,
+            this.PrecoEstudante,
+            this.PrecoProfessor,
+            this.Pratos,
+            this.Extras});
             this.dataGridViewMenus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridViewMenus.Location = new System.Drawing.Point(262, 80);
             this.dataGridViewMenus.MultiSelect = false;
@@ -193,6 +209,41 @@
             this.dataGridViewMenus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewMenus.Size = new System.Drawing.Size(526, 150);
             this.dataGridViewMenus.TabIndex = 15;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
+            // 
+            // DataHora
+            // 
+            this.DataHora.HeaderText = "Data";
+            this.DataHora.Name = "DataHora";
+            // 
+            // QtdDisponivel
+            // 
+            this.QtdDisponivel.HeaderText = "Quantidade";
+            this.QtdDisponivel.Name = "QtdDisponivel";
+            // 
+            // PrecoEstudante
+            // 
+            this.PrecoEstudante.HeaderText = "Preço Estudante";
+            this.PrecoEstudante.Name = "PrecoEstudante";
+            // 
+            // PrecoProfessor
+            // 
+            this.PrecoProfessor.HeaderText = "Preço Professor";
+            this.PrecoProfessor.Name = "PrecoProfessor";
+            // 
+            // Pratos
+            // 
+            this.Pratos.HeaderText = "Prato";
+            this.Pratos.Name = "Pratos";
+            // 
+            // Extras
+            // 
+            this.Extras.HeaderText = "Extra";
+            this.Extras.Name = "Extras";
             // 
             // dataSet1
             // 
@@ -204,11 +255,22 @@
             this.dataSet1BindingSource.DataSource = this.dataSet1;
             this.dataSet1BindingSource.Position = 0;
             // 
+            // btnVoltarMenu
+            // 
+            this.btnVoltarMenu.Location = new System.Drawing.Point(103, 316);
+            this.btnVoltarMenu.Name = "btnVoltarMenu";
+            this.btnVoltarMenu.Size = new System.Drawing.Size(75, 23);
+            this.btnVoltarMenu.TabIndex = 16;
+            this.btnVoltarMenu.Text = "Voltar Menu";
+            this.btnVoltarMenu.UseVisualStyleBackColor = true;
+            this.btnVoltarMenu.Click += new System.EventHandler(this.btnVoltarMenu_Click);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVoltarMenu);
             this.Controls.Add(this.dataGridViewMenus);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnEditar);
@@ -256,5 +318,13 @@
         private System.Windows.Forms.DataGridView dataGridViewMenus;
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource dataSet1BindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataHora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QtdDisponivel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecoEstudante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecoProfessor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pratos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Extras;
+        private System.Windows.Forms.Button btnVoltarMenu;
     }
 }

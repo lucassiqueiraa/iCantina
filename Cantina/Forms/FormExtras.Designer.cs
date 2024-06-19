@@ -34,7 +34,7 @@
             this.listBoxExtras = new System.Windows.Forms.ListBox();
             this.button3 = new System.Windows.Forms.Button();
             this.btnGravarExtra = new System.Windows.Forms.Button();
-            this.btnListarExtras = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.textPreco = new System.Windows.Forms.TextBox();
             this.textDescricao = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -105,16 +105,16 @@
             this.btnGravarExtra.UseVisualStyleBackColor = true;
             this.btnGravarExtra.Click += new System.EventHandler(this.btnGravarExtra_Click);
             // 
-            // btnListarExtras
+            // btnExcluir
             // 
-            this.btnListarExtras.Location = new System.Drawing.Point(368, 109);
-            this.btnListarExtras.Margin = new System.Windows.Forms.Padding(2);
-            this.btnListarExtras.Name = "btnListarExtras";
-            this.btnListarExtras.Size = new System.Drawing.Size(94, 33);
-            this.btnListarExtras.TabIndex = 19;
-            this.btnListarExtras.Text = "Listar Funcionarios";
-            this.btnListarExtras.UseVisualStyleBackColor = true;
-            this.btnListarExtras.Click += new System.EventHandler(this.btnListarExtras_Click);
+            this.btnExcluir.Location = new System.Drawing.Point(368, 109);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(94, 33);
+            this.btnExcluir.TabIndex = 19;
+            this.btnExcluir.Text = "Excluir Extra";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // textPreco
             // 
@@ -163,13 +163,14 @@
             this.Controls.Add(this.listBoxExtras);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnGravarExtra);
-            this.Controls.Add(this.btnListarExtras);
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.textPreco);
             this.Controls.Add(this.textDescricao);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormExtras";
             this.Text = "FormExtras";
+            this.Load += new System.EventHandler(this.FormExtras_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,7 +184,7 @@
         private System.Windows.Forms.ListBox listBoxExtras;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnGravarExtra;
-        private System.Windows.Forms.Button btnListarExtras;
+        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.TextBox textPreco;
         private System.Windows.Forms.TextBox textDescricao;
         private System.Windows.Forms.Label label2;

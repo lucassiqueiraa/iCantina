@@ -307,5 +307,10 @@ namespace Cantina.Forms
                 MessageBox.Show("Por favor, busque um professor pelo NIF ou selecione um professor na lista!");
             }
         }
+
+        private void FormProfessor_Load(object sender, EventArgs e)
+        {
+            ListarProfessores();
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +22,6 @@ namespace Cantina.Data
         public DbSet<Multa> Multas { get; set; }
         public DbSet<Fatura> Faturas { get; set; }
         public DbSet<ItemFatura> ItensFatura { get; set; }
-        public DbSet<MenuDiario> MenusDiarios { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

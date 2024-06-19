@@ -13,9 +13,6 @@ namespace Cantina.Models
         public int QtdDisponivel { get; set; }
         public decimal PrecoEstudante { get; set; }
         public decimal PrecoProfessor { get; set; }
-        public DateTime Data { get; set; } // Propriedade Data para representar a data do menu
-        public string Nome { get; set; }
-        public decimal Valor { get; set; }
         public virtual ICollection<Prato> Pratos { get; set; } = new List<Prato>();
         public virtual ICollection<Extra> Extras { get; set; } = new List<Extra>();
 

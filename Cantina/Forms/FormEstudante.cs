@@ -202,5 +202,116 @@ namespace Cantina.Forms
             mainMenu.Show(this);
             this.Hide();
         }
+
+        private void btnAdicionarCredito_Click(object sender, EventArgs e)
+        {
+            if (selectedClienteId != -1)
+            {
+                string creditoAdicionalText = textCreditoAdicional.Text.Trim();
+
+                if (!decimal.TryParse(creditoAdicionalText, out decimal creditoAdicional))
+                {
+                    MessageBox.Show("O valor do crédito adicional deve ser um número válido.");
+                    return;
+                }
+
+                using (var context = new CantinaContext())
+                {
+                    var cliente = context.Clientes.Find(selectedClienteId);
+                    if (cliente != null)
+                    {
+                        cliente.Saldo += creditoAdicional;
+                        context.Entry(cliente).State = System.Data.Entity.EntityState.Modified;
+                        context.SaveChanges();
+
+                        ListarClientes();
+                        MessageBox.Show($"Crédito adicionado com sucesso! Novo saldo de {cliente.Nome} (ID: {cliente.Id}) é {cliente.Saldo:C}");
+
+                        textCreditoAdicional.Text = "";
+                        textNome.Text = "";
+                        textNif.Text = "";
+                        textAporteCredito.Enabled = true;
+                        textCreditoAdicional.Enabled = false;
+                        selectedClienteId = -1;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cliente não encontrado.");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, busque um cliente pelo NIF ou selecione um cliente na lista!");
+            }
+            /*
+            if(listBoxClientes.SelectedItem != null)
+            {
+                string selectedCliente = listBoxClientes.SelectedItem.ToString();
+                int startIndex = selectedCliente.IndexOf("ID: ") + 4;
+                int endIndex = selectedCliente.IndexOf(",", startIndex);
+                int id = int.Parse(selectedCliente.Substring(startIndex, endIndex - startIndex));
+
+                string creditoAdicionalText = textCreditoAdicional.Text.Trim();
+
+                if (!decimal.TryParse(creditoAdicionalText, out decimal creditoAdicional))
+                {
+                    MessageBox.Show("O valor do crédito adicional deve ser um número válido.");
+                    return;
+                }
+                using (var context = new CantinaContext())
+                {
+                    var cliente = context.Clientes.Find(id);
+                    if (cliente != null)
+                    {
+                        cliente.Saldo += creditoAdicional;
+                        context.Entry(cliente).State = System.Data.Entity.EntityState.Modified;
+                        context.SaveChanges();
+
+                        ListarClientes();
+                        MessageBox.Show($"Crédito adicionado com sucesso! Novo saldo de {cliente.Nome} (ID: {cliente.Id}) é {cliente.Saldo:C}");
+
+                        textCreditoAdicional.Text = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cliente não encontrado.");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecione um cliente para adicionar crédito!");
+            }*/
+        } 
+
+        private void btnBuscarClientePorNif_Click(object sender, EventArgs e)
+        {
+            string nifText = textBuscaNif.Text.Trim();
+
+            if(!int.TryParse(nifText,out int nif))
+            {
+                MessageBox.Show("O NIF deve ser um número válido!");
+                return;
+            }
+            using(var context = new CantinaContext())
+            {
+                var cliente = context.Clientes.FirstOrDefault(c => c.NIF == nif);
+                if(cliente != null)
+                {
+                    selectedClienteId = cliente.Id;
+                    textNome.Text = cliente.Nome;
+                    textNif.Text = cliente.NIF.ToString();
+                    textAporteCredito.Enabled = false;
+                    textCreditoAdicional.Enabled = true;
+                    MessageBox.Show($"Cliente {cliente.Nome} (ID: {cliente.Id}) encontrado.");
+
+                }
+                else
+                {
+                    MessageBox.Show("Cliente não encontrado!");
+                }
+            }
+        }
     }
 }

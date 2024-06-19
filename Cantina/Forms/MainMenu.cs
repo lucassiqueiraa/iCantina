@@ -132,5 +132,12 @@ namespace Cantina
             menu.Show();
             this.Hide();
         }
+
+        private void btnMultas_Click(object sender, EventArgs e)
+        {
+            FormMultas formMultas = new FormMultas();
+            formMultas.Show();
+            this.Hide();
+        }
     }
 }

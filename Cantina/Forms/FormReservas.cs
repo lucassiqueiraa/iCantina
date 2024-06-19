@@ -39,7 +39,7 @@ namespace Cantina.Forms
                     labelNomeCliente.Text = $"Nome: {cliente.Nome}";
                     labelSaldoCliente.Text = $"Saldo: {cliente.Saldo:C}";
                     MessageBox.Show($"Cliente {cliente.Nome} encontrado.");
-                    //CarregarMenusDisponiveis();
+                    CarregarMenusDisponiveis();
                 }
                 else
                 {
@@ -49,7 +49,21 @@ namespace Cantina.Forms
             }
         }
 
-       
+        private void CarregarMenusDisponiveis()
+        {
+            using (var context = new CantinaContext())
+            {
+                var menus = context.MenusDiarios
+                    .Where(m => m.Data == DateTime.Today && m.QtdDisponivel > 0)
+                    .ToList();
+
+                listBoxMenus.Items.Clear();
+                foreach (var menu in menus)
+                {
+                    listBoxMenus.Items.Add($"{menu.Nome} - Quantidade Disponível: {menu.QtdDisponivel}");
+                }
+            }
+        }
         private void listBoxMenus_SelectedIndexChanged(object sender, EventArgs e)
         {
             

@@ -12,5 +12,6 @@ namespace Cantina.Models
         public string Descricao { get; set; }
         public string Tipo { get; set; }
         public bool Ativo { get; set; } = true;
+        public virtual ICollection<Menu> Menus { get; set; } = new HashSet<Menu>();
     }
 }

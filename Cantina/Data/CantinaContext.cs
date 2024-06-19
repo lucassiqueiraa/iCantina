@@ -33,9 +33,21 @@ namespace Cantina.Data
                 .HasColumnType("datetime2");
 
             // Outras configurações...
+            modelBuilder.Entity<Menu>()
+                .HasMany(m => m.Pratos)
+                .WithMany(p => p.Menus)
+                .Map(m =>
+                {
+                    m.ToTable("MenuPratos");
+                    m.MapLeftKey("MenuId");
+                    m.MapRightKey("PratoId");
+                });
 
             base.OnModelCreating(modelBuilder);
         }
+
+       
+
 
 
     }

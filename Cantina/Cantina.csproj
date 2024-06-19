@@ -143,6 +143,10 @@
     <Compile Include="Migrations\202406191554097_AddDateTime2ToMenu.Designer.cs">
       <DependentUpon>202406191554097_AddDateTime2ToMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202406192226197_AddCollectionToPratoAndExtra.cs" />
+    <Compile Include="Migrations\202406192226197_AddCollectionToPratoAndExtra.Designer.cs">
+      <DependentUpon>202406192226197_AddCollectionToPratoAndExtra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Estudante.cs" />
@@ -196,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202406191554097_AddDateTime2ToMenu.resx">
       <DependentUpon>202406191554097_AddDateTime2ToMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406192226197_AddCollectionToPratoAndExtra.resx">
+      <DependentUpon>202406192226197_AddCollectionToPratoAndExtra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

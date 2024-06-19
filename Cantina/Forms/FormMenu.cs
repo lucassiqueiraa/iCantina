@@ -26,27 +26,14 @@ namespace Cantina.Forms
             dataGridViewMenus.AutoGenerateColumns = false;
             dataGridViewMenus.Columns.Clear();
 
-            dataGridViewMenus.Columns.Add(new DataGridViewTextBoxColumn() { Name = "Id", HeaderText = "ID", DataPropertyName = "Id" });
-            dataGridViewMenus.Columns.Add(new DataGridViewTextBoxColumn() { Name = "DataHora", HeaderText = "Data", DataPropertyName = "DataHora" });
-            dataGridViewMenus.Columns.Add(new DataGridViewTextBoxColumn() { Name = "QtdDisponivel", HeaderText = "Quantidade", DataPropertyName = "QtdDisponivel" });
-            dataGridViewMenus.Columns.Add(new DataGridViewTextBoxColumn() { Name = "PrecoEstudante", HeaderText = "Preço Estudante", DataPropertyName = "PrecoEstudante" });
-            dataGridViewMenus.Columns.Add(new DataGridViewTextBoxColumn() { Name = "PrecoProfessor", HeaderText = "Preço Professor", DataPropertyName = "PrecoProfessor" });
-
-            // Coluna para exibir os pratos
-            DataGridViewTextBoxColumn pratosColumn = new DataGridViewTextBoxColumn();
-            pratosColumn.Name = "Pratos";
-            pratosColumn.HeaderText = "Pratos";
-            pratosColumn.DataPropertyName = "Pratos"; // Nome da propriedade no objeto Menu
-            dataGridViewMenus.Columns.Add(pratosColumn);
-
-            // Coluna para exibir os extras
-            DataGridViewTextBoxColumn extrasColumn = new DataGridViewTextBoxColumn();
-            extrasColumn.Name = "Extras";
-            extrasColumn.HeaderText = "Extras";
-            extrasColumn.DataPropertyName = "Extras"; // Nome da propriedade no objeto Menu
-            dataGridViewMenus.Columns.Add(extrasColumn);
-
-            
+            // Configuração das colunas básicas do DataGridView
+            dataGridViewMenus.Columns.Add("Id", "ID");
+            dataGridViewMenus.Columns.Add("DataHora", "Data");
+            dataGridViewMenus.Columns.Add("QtdDisponivel", "Quantidade");
+            dataGridViewMenus.Columns.Add("PrecoEstudante", "Preço Estudante");
+            dataGridViewMenus.Columns.Add("PrecoProfessor", "Preço Professor");
+            dataGridViewMenus.Columns.Add("Pratos", "Pratos");
+            dataGridViewMenus.Columns.Add("Extras", "Extras");
         }
 
         private void CarregarPratosExtras()
@@ -66,15 +53,6 @@ namespace Cantina.Forms
         {
             bool isEdit = dataGridViewMenus.SelectedRows.Count > 0 && dataGridViewMenus.SelectedRows[0].Cells["Id"].Value != null;
 
-            var selectedPrato = _context.Pratos.Find((int)comboBoxPratos.SelectedValue);
-            var selectedExtra = _context.Extras.Find((int)comboBoxExtras.SelectedValue);
-
-            if (selectedPrato == null || selectedExtra == null)
-            {
-                MessageBox.Show("Selecione um prato e um extra válidos.");
-                return;
-            }
-
             Models.Menu menu = null;
             if (isEdit)
             {
@@ -92,18 +70,26 @@ namespace Cantina.Forms
             menu.PrecoEstudante = decimal.Parse(txtPrecoEstudante.Text);
             menu.PrecoProfessor = decimal.Parse(txtPrecoProf.Text);
 
-            // Clonar e adicionar o prato selecionado
-            var clonedPrato = Clone(selectedPrato);
-            if (!menu.Pratos.Any(p => p.Id == clonedPrato.Id))
+            // Associar o prato selecionado ao menu, se ainda não estiver associado
+            var selectedPratoId = (int)comboBoxPratos.SelectedValue;
+            if (!menu.Pratos.Any(p => p.Id == selectedPratoId))
             {
-                menu.Pratos.Add(clonedPrato);
+                var selectedPrato = _context.Pratos.Find(selectedPratoId);
+                if (selectedPrato != null)
+                {
+                    menu.Pratos.Add(selectedPrato);
+                }
             }
 
-            // Clonar e adicionar o extra selecionado
-            var clonedExtra = Clone(selectedExtra);
-            if (!menu.Extras.Any(extra => extra.Id == clonedExtra.Id))
+            // Associar o extra selecionado ao menu, se ainda não estiver associado
+            var selectedExtraId = (int)comboBoxExtras.SelectedValue;
+            if (!menu.Extras.Any(extra => extra.Id == selectedExtraId))
             {
-                menu.Extras.Add(clonedExtra);
+                var selectedExtra = _context.Extras.Find(selectedExtraId);
+                if (selectedExtra != null)
+                {
+                    menu.Extras.Add(selectedExtra);
+                }
             }
 
             _context.SaveChanges();
@@ -112,23 +98,6 @@ namespace Cantina.Forms
             MessageBox.Show("Menu salvo com sucesso!");
         }
 
-        // Método para clonar um objeto Prato
-        private Prato Clone(Prato prato)
-        {
-            return new Prato
-            {
-                Descricao = prato.Descricao,
-            };
-        }
-
-        // Método para clonar um objeto Extra
-        private Extra Clone(Extra extra)
-        {
-            return new Extra
-            {
-                Descricao = extra.Descricao,
-            };
-        }
 
         private void LoadMenus()
         {
@@ -141,11 +110,11 @@ namespace Cantina.Forms
 
             foreach (var menu in menus)
             {
-                var row = new DataGridViewRow();
+                DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(dataGridViewMenus);
 
                 row.Cells[0].Value = menu.Id;
-                row.Cells[1].Value = menu.DataHora.ToString("dd/MM/yyyy HH:mm:ss"); // Formate conforme necessário
+                row.Cells[1].Value = menu.DataHora.ToString("dd/MM/yyyy HH:mm:ss");
                 row.Cells[2].Value = menu.QtdDisponivel;
                 row.Cells[3].Value = menu.PrecoEstudante;
                 row.Cells[4].Value = menu.PrecoProfessor;
@@ -154,14 +123,7 @@ namespace Cantina.Forms
 
                 dataGridViewMenus.Rows.Add(row);
             }
-
-            if (dataGridViewMenus.Rows.Count > 0)
-            {
-                dataGridViewMenus.ClearSelection();
-                LimparCampos();
-            }
         }
-
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -171,21 +133,17 @@ namespace Cantina.Forms
                 return;
             }
 
-            var selectedRow = dataGridViewMenus.SelectedRows[0];
-            if (selectedRow != null && selectedRow.Cells["Id"].Value != null)
-            {
-                int menuId = (int)selectedRow.Cells["Id"].Value;
-                var menu = _context.Menus.Include(m => m.Pratos).Include(m => m.Extras).FirstOrDefault(m => m.Id == menuId);
+            int menuId = (int)dataGridViewMenus.SelectedRows[0].Cells["Id"].Value;
+            var menu = _context.Menus.Include(m => m.Pratos).Include(m => m.Extras).FirstOrDefault(m => m.Id == menuId);
 
-                if (menu != null)
-                {
-                    dateTime.Value = menu.DataHora;
-                    qtd.Value = menu.QtdDisponivel;
-                    txtPrecoEstudante.Text = menu.PrecoEstudante.ToString();
-                    txtPrecoProf.Text = menu.PrecoProfessor.ToString();
-                    comboBoxPratos.SelectedValue = menu.Pratos.FirstOrDefault()?.Id;
-                    comboBoxExtras.SelectedValue = menu.Extras.FirstOrDefault()?.Id;
-                }
+            if (menu != null)
+            {
+                dateTime.Value = menu.DataHora;
+                qtd.Value = menu.QtdDisponivel;
+                txtPrecoEstudante.Text = menu.PrecoEstudante.ToString();
+                txtPrecoProf.Text = menu.PrecoProfessor.ToString();
+                comboBoxPratos.SelectedValue = menu.Pratos.FirstOrDefault()?.Id;
+                comboBoxExtras.SelectedValue = menu.Extras.FirstOrDefault()?.Id;
             }
             else
             {
@@ -216,44 +174,6 @@ namespace Cantina.Forms
                 MessageBox.Show("Erro ao excluir o menu. Tente novamente.");
             }
         }
-
-        private void dataGridViewMenus_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dataGridViewMenus.SelectedRows.Count > 0)
-            {
-                var selectedRow = dataGridViewMenus.SelectedRows[0];
-                if (selectedRow != null && selectedRow.Cells["Id"].Value != null)
-                {
-                    int menuId = (int)selectedRow.Cells["Id"].Value;
-                    var menu = _context.Menus.Include(m => m.Pratos).Include(m => m.Extras).FirstOrDefault(m => m.Id == menuId);
-
-                    if (menu != null)
-                    {
-                        dateTime.Value = menu.DataHora;
-                        qtd.Value = menu.QtdDisponivel;
-                        txtPrecoEstudante.Text = menu.PrecoEstudante.ToString();
-                        txtPrecoProf.Text = menu.PrecoProfessor.ToString();
-                        comboBoxPratos.SelectedValue = menu.Pratos.FirstOrDefault()?.Id;
-                        comboBoxExtras.SelectedValue = menu.Extras.FirstOrDefault()?.Id;
-                    }
-                }
-            }
-            else
-            {
-                LimparCampos();
-            }
-        }
-
-        private void LimparCampos()
-        {
-            dateTime.Value = DateTime.Now;
-            qtd.Value = 0;
-            txtPrecoEstudante.Clear();
-            txtPrecoProf.Clear();
-            comboBoxPratos.SelectedIndex = -1;
-            comboBoxExtras.SelectedIndex = -1;
-        }
-
         private void btnVoltarMenu_Click(object sender, EventArgs e)
         {
             MainMenu mainMenu = new MainMenu();
@@ -266,21 +186,6 @@ namespace Cantina.Forms
             dateTime.Format = DateTimePickerFormat.Custom;
             dateTime.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             dateTime.ShowUpDown = true;
-        }
-
-        private void dataGridViewMenus_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                if (dataGridViewMenus.Columns[e.ColumnIndex].Name == "Editar")
-                {
-                    btnEditar_Click(sender, e);
-                }
-                else if (dataGridViewMenus.Columns[e.ColumnIndex].Name == "Excluir")
-                {
-                    btnExcluir_Click(sender, e);
-                }
-            }
         }
     }
 }

@@ -24,11 +24,25 @@ namespace Cantina
             InitializeComponent();
             monthCalendar1.DateChanged += monthCalendar1_DateChanged;
 
-            // Configurar colunas do DataGridView
+            // Configuração inicial do DataGridView
+            ConfigurarDataGridView();
+        }
+
+        private void ConfigurarDataGridView()
+        {
+            // Limpa as colunas existentes e adiciona as novas colunas necessárias
             listaMenus.Columns.Clear();
-            listaMenus.Columns.Add("colCarne", "Carne");
-            listaMenus.Columns.Add("colPeixe", "Peixe");
-            listaMenus.Columns.Add("colVegetariano", "Vegetariano");
+
+            listaMenus.Columns.Add("colId", "ID");
+            listaMenus.Columns.Add("colDataHora", "Data e Hora");
+            listaMenus.Columns.Add("colQtdDisponivel", "Quantidade Disponível");
+            listaMenus.Columns.Add("colPrecoEstudante", "Preço Estudante");
+            listaMenus.Columns.Add("colPrecoProfessor", "Preço Professor");
+            listaMenus.Columns.Add("colPratos", "Pratos");
+            listaMenus.Columns.Add("colExtras", "Extras");
+
+            // Ajusta o modo de redimensionamento das colunas, se necessário
+            listaMenus.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
@@ -40,37 +54,37 @@ namespace Cantina
             DateTime selectedDate = e.Start;
             var menus = GetMenusFromDatabase(selectedDate);
 
-            // Supondo que 'menus' seja uma lista de objetos Menu
+            // Preenche o DataGridView com os menus encontrados
             foreach (var menu in menus)
             {
-                var carne = menu.Pratos.FirstOrDefault(p => p.Tipo == "Carne");
-                var peixe = menu.Pratos.FirstOrDefault(p => p.Tipo == "Peixe");
-                var vegetariano = menu.Pratos.FirstOrDefault(p => p.Tipo == "Vegetariano");
+                var row = new DataGridViewRow();
+                row.CreateCells(listaMenus);
 
-                listaMenus.Rows.Add(
-                    carne != null ? carne.Descricao : "",
-                    peixe != null ? peixe.Descricao : "",
-                    vegetariano != null ? vegetariano.Descricao : ""
-                );
+                row.Cells[0].Value = menu.Id;
+                row.Cells[1].Value = menu.DataHora.ToString("dd/MM/yyyy HH:mm:ss");
+                row.Cells[2].Value = menu.QtdDisponivel;
+                row.Cells[3].Value = menu.PrecoEstudante;
+                row.Cells[4].Value = menu.PrecoProfessor;
+                row.Cells[5].Value = string.Join(", ", menu.Pratos.Select(p => p.Descricao));
+                row.Cells[6].Value = string.Join(", ", menu.Extras.Select(extra => extra.Descricao));
+
+                listaMenus.Rows.Add(row);
             }
         }
-
 
         private List<Cantina.Models.Menu> GetMenusFromDatabase(DateTime date)
         {
             using (var context = new CantinaContext())
             {
                 var menus = context.Menus
-                    .Include(m => m.Pratos) // Garante que os pratos sejam incluídos na consulta
-                    .Include(m => m.Extras) // Garante que os extras sejam incluídos na consulta
+                    .Include(m => m.Pratos)
+                    .Include(m => m.Extras)
                     .Where(m => DbFunctions.TruncateTime(m.DataHora) == date.Date)
                     .ToList();
 
                 return menus;
             }
         }
-
-
 
         protected override void OnLoad(EventArgs e)
         {

@@ -108,6 +108,7 @@
             this.btnListarCliente.TabIndex = 32;
             this.btnListarCliente.Text = "Listar Cliente";
             this.btnListarCliente.UseVisualStyleBackColor = true;
+            this.btnListarCliente.Click += new System.EventHandler(this.btnListarCliente_Click);
             // 
             // btnGravarFuncionario
             // 
@@ -117,6 +118,7 @@
             this.btnGravarFuncionario.TabIndex = 33;
             this.btnGravarFuncionario.Text = "Gravar Cliente";
             this.btnGravarFuncionario.UseVisualStyleBackColor = true;
+            this.btnGravarFuncionario.Click += new System.EventHandler(this.btnGravarCliente_Click);
             // 
             // btnVoltarMenu
             // 
@@ -126,6 +128,7 @@
             this.btnVoltarMenu.TabIndex = 34;
             this.btnVoltarMenu.Text = "Voltar Menu Principal";
             this.btnVoltarMenu.UseVisualStyleBackColor = true;
+            this.btnVoltarMenu.Click += new System.EventHandler(this.btnVoltarMenu_Click);
             // 
             // btnInativarCliente
             // 
@@ -135,6 +138,7 @@
             this.btnInativarCliente.TabIndex = 36;
             this.btnInativarCliente.Text = "Inativar Cliente";
             this.btnInativarCliente.UseVisualStyleBackColor = true;
+            this.btnInativarCliente.MouseCaptureChanged += new System.EventHandler(this.btnInativarCliente_Click);
             // 
             // btnGravarEdicao
             // 
@@ -144,6 +148,7 @@
             this.btnGravarEdicao.TabIndex = 38;
             this.btnGravarEdicao.Text = "Gravar Edição Cliente";
             this.btnGravarEdicao.UseVisualStyleBackColor = true;
+            this.btnGravarEdicao.Click += new System.EventHandler(this.btnGravarEdicao_Click);
             // 
             // btnEditarCliente
             // 
@@ -153,6 +158,7 @@
             this.btnEditarCliente.TabIndex = 37;
             this.btnEditarCliente.Text = "Editar Cliente";
             this.btnEditarCliente.UseVisualStyleBackColor = true;
+            this.btnEditarCliente.MouseCaptureChanged += new System.EventHandler(this.btnEditarCliente_Click);
             // 
             // FormEstudante
             // 

@@ -69,6 +69,7 @@
             this.btnGravarEdicao.TabIndex = 38;
             this.btnGravarEdicao.Text = "Gravar Edição Professor";
             this.btnGravarEdicao.UseVisualStyleBackColor = true;
+            this.btnGravarEdicao.Click += new System.EventHandler(this.btnGravarEdicao_Click);
             // 
             // btnEditarCliente
             // 
@@ -78,6 +79,7 @@
             this.btnEditarCliente.TabIndex = 37;
             this.btnEditarCliente.Text = "Editar Professor";
             this.btnEditarCliente.UseVisualStyleBackColor = true;
+            this.btnEditarCliente.Click += new System.EventHandler(this.btnEditarProfessor_Click);
             // 
             // btnInativarCliente
             // 
@@ -87,6 +89,7 @@
             this.btnInativarCliente.TabIndex = 36;
             this.btnInativarCliente.Text = "Inativar Professor";
             this.btnInativarCliente.UseVisualStyleBackColor = true;
+            this.btnInativarCliente.Click += new System.EventHandler(this.btnInativarProfessor_Click);
             // 
             // listBoxProfessores
             // 
@@ -105,6 +108,7 @@
             this.btnVoltarMenu.TabIndex = 34;
             this.btnVoltarMenu.Text = "Voltar Menu Principal";
             this.btnVoltarMenu.UseVisualStyleBackColor = true;
+            this.btnVoltarMenu.Click += new System.EventHandler(this.btnVoltarMenu_Click);
             // 
             // btnGravarFuncionario
             // 
@@ -114,6 +118,7 @@
             this.btnGravarFuncionario.TabIndex = 33;
             this.btnGravarFuncionario.Text = "Gravar Professor";
             this.btnGravarFuncionario.UseVisualStyleBackColor = true;
+            this.btnGravarFuncionario.Click += new System.EventHandler(this.btnGravarProfessor_Click);
             // 
             // btnListarCliente
             // 
@@ -123,6 +128,7 @@
             this.btnListarCliente.TabIndex = 32;
             this.btnListarCliente.Text = "Listar Professor";
             this.btnListarCliente.UseVisualStyleBackColor = true;
+            this.btnListarCliente.Click += new System.EventHandler(this.btnListarProfessores_Click);
             // 
             // textNif
             // 

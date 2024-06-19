@@ -21,8 +21,9 @@ namespace Cantina.Forms
         {
             string nome = textNome.Text.Trim();
             string nifText = textNif.Text.Trim();
-            string creditoText = textAporteCredito.Text.Trim();
             string email = textEmail.Text.Trim();
+            string creditoText = textAporteCredito.Text.Trim();
+           
 
             // Validação básica na entrada de informações
             if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(nifText) || string.IsNullOrEmpty(creditoText) || string.IsNullOrEmpty(email))
@@ -45,12 +46,11 @@ namespace Cantina.Forms
             {
                 Nome = nome,
                 NIF = nif,
-                Saldo = credito,
-                Email = email
+                Email = email,
+                Saldo = credito
             };
 
-            try
-            {
+          
                 using (var context = new CantinaContext())
                 {
                     context.Professores.Add(professor);
@@ -63,11 +63,7 @@ namespace Cantina.Forms
                 textEmail.Text = "";
 
                 ListarProfessores();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao gravar professor: {ex.Message}");
-            }
+            
         }
 
         private void ListarProfessores()

@@ -9,7 +9,7 @@ namespace Cantina.Forms
 {
     public partial class FormGestaoClientes : Form
     {
-        private int selectedClienteId = -1; // Adicionando esta linha para armazenar o ID do cliente selecionado
+       // private int selectedClienteId = -1; // Adicionando esta linha para armazenar o ID do cliente selecionado
 
         public FormGestaoClientes()
         {
@@ -39,6 +39,15 @@ namespace Cantina.Forms
                 formProfessor.ShowDialog();
             }
             this.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.ShowDialog();
+            this.Close();
+            this.Hide();
+            
         }
     }
 }

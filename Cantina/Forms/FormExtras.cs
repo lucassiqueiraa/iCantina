@@ -28,11 +28,6 @@ namespace Cantina.Forms
             this.Hide();
         }
 
-        private void btnListarExtras_Click(object sender, EventArgs e)
-        {
-            ListarExtras();
-        }
-
         private void ListarExtras()
         {
             List<Extra> extras;
@@ -215,6 +210,39 @@ namespace Cantina.Forms
             {
                 MessageBox.Show("Nenhum Extra selecionado para edição.");
             }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (listBoxExtras.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione um extra para excluir.");
+                return;
+            }
+
+            string selectedExtra = listBoxExtras.SelectedItem.ToString();
+            int id = int.Parse(selectedExtra.Substring(4, selectedExtra.IndexOf(",") - 4));
+
+            using (var context = new CantinaContext())
+            {
+                var extra = context.Extras.Find(id);
+                if (extra != null)
+                {
+                    context.Extras.Remove(extra);
+                    context.SaveChanges();
+                    listBoxExtras.Items.Remove(listBoxExtras.SelectedItem);
+                    MessageBox.Show("Extra excluído com sucesso.");
+                }
+                else
+                {
+                    MessageBox.Show("Extra não encontrado!");
+                }
+            }
+        }
+
+        private void FormExtras_Load(object sender, EventArgs e)
+        {
+            ListarExtras();
         }
     }
 }

@@ -22,11 +22,6 @@ namespace Cantina.Forms
             this.Hide();
         }
 
-        private void btnListarFuncionarios_Click(object sender, EventArgs e)
-        {
-            ListarFuncionarios();
-        }
-
         private void ListarFuncionarios()
         {
             List<Funcionario> funcionarios;
@@ -106,9 +101,7 @@ namespace Cantina.Forms
 
         private void FormFuncionarios_Load(object sender, EventArgs e)
         {
-            // Opcional: Chamar o método para listar funcionários ao carregar o formulário
-            // Assim, quando abrir o formulário ele automaticamente lista
-            // ListarFuncionarios();
+             ListarFuncionarios();
 
         }
 
@@ -229,6 +222,8 @@ namespace Cantina.Forms
             }
 
         }
+
+        
     }
 
        

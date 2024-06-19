@@ -78,11 +78,6 @@ namespace Cantina.Forms
             }
         }
 
-        private void btnListarCliente_Click(object sender, EventArgs e)
-        {
-            ListarClientes();
-        }
-
         private void btnInativarCliente_Click(object sender, EventArgs e)
         {
             if (listBoxClientes.SelectedItem != null)
@@ -273,6 +268,39 @@ namespace Cantina.Forms
                     MessageBox.Show("Cliente não encontrado!");
                 }
             }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (listBoxClientes.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione um prato para excluir.");
+                return;
+            }
+
+            string selectedCliente = listBoxClientes.SelectedItem.ToString();
+            int id = int.Parse(selectedCliente.Substring(4, selectedCliente.IndexOf(",") - 4));
+
+            using (var context = new CantinaContext())
+            {
+                var cliente = context.Clientes.Find(id);
+                if (cliente != null)
+                {
+                    context.Clientes.Remove(cliente);
+                    context.SaveChanges();
+                    listBoxClientes.Items.Remove(listBoxClientes.SelectedItem);
+                    MessageBox.Show("Cliente excluído com sucesso.");
+                }
+                else
+                {
+                    MessageBox.Show("Cliente não encontrado!");
+                }
+            }
+        }
+
+        private void FormEstudante_Load(object sender, EventArgs e)
+        {
+            ListarClientes();
         }
     }
 }

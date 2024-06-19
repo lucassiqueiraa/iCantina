@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
+
 namespace Cantina
 {
     public partial class MainMenu : Form
@@ -86,13 +87,7 @@ namespace Cantina
             }
         }
 
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-            // Atualiza label com o nome do cliente
-            funcionarioUsername.Text += ClienteNome;
-        }
-
+       
         private void btnFuncionario_Click(object sender, EventArgs e)
         {
             FormFuncionarios formFuncionarios = new FormFuncionarios();
@@ -102,6 +97,7 @@ namespace Cantina
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            
             this.Close();
            
         }

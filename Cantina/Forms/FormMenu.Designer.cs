@@ -64,60 +64,72 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 30);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(70, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.Size = new System.Drawing.Size(43, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Data:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 61);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(39, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.Size = new System.Drawing.Size(86, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Quantidade:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 87);
+            this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(6, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 13);
+            this.label3.Size = new System.Drawing.Size(119, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Preço Estudante:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 113);
+            this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(9, 108);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 13);
+            this.label4.Size = new System.Drawing.Size(116, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Preço Professor:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(43, 140);
+            this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(58, 135);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.Size = new System.Drawing.Size(55, 16);
             this.label5.TabIndex = 4;
             this.label5.Text = "Pratos:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(43, 172);
+            this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(70, 167);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.Size = new System.Drawing.Size(53, 16);
             this.label6.TabIndex = 5;
             this.label6.Text = "Extras:";
             // 
             // dateTime
             // 
-            this.dateTime.Location = new System.Drawing.Point(103, 24);
+            this.dateTime.Location = new System.Drawing.Point(130, 22);
             this.dateTime.Name = "dateTime";
             this.dateTime.Size = new System.Drawing.Size(200, 20);
             this.dateTime.TabIndex = 6;
@@ -125,21 +137,21 @@
             // 
             // qtd
             // 
-            this.qtd.Location = new System.Drawing.Point(104, 54);
+            this.qtd.Location = new System.Drawing.Point(131, 52);
             this.qtd.Name = "qtd";
             this.qtd.Size = new System.Drawing.Size(120, 20);
             this.qtd.TabIndex = 7;
             // 
             // txtPrecoEstudante
             // 
-            this.txtPrecoEstudante.Location = new System.Drawing.Point(103, 80);
+            this.txtPrecoEstudante.Location = new System.Drawing.Point(130, 78);
             this.txtPrecoEstudante.Name = "txtPrecoEstudante";
             this.txtPrecoEstudante.Size = new System.Drawing.Size(121, 20);
             this.txtPrecoEstudante.TabIndex = 8;
             // 
             // txtPrecoProf
             // 
-            this.txtPrecoProf.Location = new System.Drawing.Point(103, 106);
+            this.txtPrecoProf.Location = new System.Drawing.Point(130, 104);
             this.txtPrecoProf.Name = "txtPrecoProf";
             this.txtPrecoProf.Size = new System.Drawing.Size(120, 20);
             this.txtPrecoProf.TabIndex = 9;
@@ -147,7 +159,7 @@
             // comboBoxPratos
             // 
             this.comboBoxPratos.FormattingEnabled = true;
-            this.comboBoxPratos.Location = new System.Drawing.Point(103, 132);
+            this.comboBoxPratos.Location = new System.Drawing.Point(130, 130);
             this.comboBoxPratos.Name = "comboBoxPratos";
             this.comboBoxPratos.Size = new System.Drawing.Size(121, 21);
             this.comboBoxPratos.TabIndex = 10;
@@ -155,14 +167,15 @@
             // comboBoxExtras
             // 
             this.comboBoxExtras.FormattingEnabled = true;
-            this.comboBoxExtras.Location = new System.Drawing.Point(103, 164);
+            this.comboBoxExtras.Location = new System.Drawing.Point(130, 162);
             this.comboBoxExtras.Name = "comboBoxExtras";
             this.comboBoxExtras.Size = new System.Drawing.Size(121, 21);
             this.comboBoxExtras.TabIndex = 11;
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(149, 195);
+            this.btnSalvar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Location = new System.Drawing.Point(176, 193);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 12;
@@ -204,7 +217,7 @@
             this.Pratos,
             this.Extras});
             this.dataGridViewMenus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataGridViewMenus.Location = new System.Drawing.Point(262, 80);
+            this.dataGridViewMenus.Location = new System.Drawing.Point(272, 84);
             this.dataGridViewMenus.MultiSelect = false;
             this.dataGridViewMenus.Name = "dataGridViewMenus";
             this.dataGridViewMenus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -270,6 +283,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnVoltarMenu);
             this.Controls.Add(this.dataGridViewMenus);

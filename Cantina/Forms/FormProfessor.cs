@@ -308,9 +308,6 @@ namespace Cantina.Forms
             }
         }
 
-        private void FormProfessor_Load(object sender, EventArgs e)
-        {
-            ListarProfessores();
-        }
+        
     }
 }

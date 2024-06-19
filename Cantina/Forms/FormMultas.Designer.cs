@@ -34,9 +34,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(596, 360);
+            this.button1.Location = new System.Drawing.Point(397, 230);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 78);
+            this.button1.Size = new System.Drawing.Size(123, 50);
             this.button1.TabIndex = 0;
             this.button1.Text = "Voltar Menu Principal";
             this.button1.UseVisualStyleBackColor = true;
@@ -45,19 +46,23 @@
             // listBoxMultas
             // 
             this.listBoxMultas.FormattingEnabled = true;
-            this.listBoxMultas.ItemHeight = 25;
-            this.listBoxMultas.Location = new System.Drawing.Point(70, 59);
+            this.listBoxMultas.ItemHeight = 16;
+            this.listBoxMultas.Location = new System.Drawing.Point(47, 38);
+            this.listBoxMultas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBoxMultas.Name = "listBoxMultas";
-            this.listBoxMultas.Size = new System.Drawing.Size(655, 229);
+            this.listBoxMultas.Size = new System.Drawing.Size(439, 148);
             this.listBoxMultas.TabIndex = 1;
             // 
             // FormMultas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
+            this.ClientSize = new System.Drawing.Size(533, 288);
             this.Controls.Add(this.listBoxMultas);
             this.Controls.Add(this.button1);
+            this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMultas";
             this.Text = "FormMultas";
             this.Load += new System.EventHandler(this.FormMultas_Load);

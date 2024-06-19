@@ -47,59 +47,69 @@ namespace Cantina.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 19);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(116, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(55, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome  :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 60);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(116, 59);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.Size = new System.Drawing.Size(39, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "NIF  :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 93);
+            this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(116, 92);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.Size = new System.Drawing.Size(80, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Username :";
             // 
             // textNome
             // 
-            this.textNome.Location = new System.Drawing.Point(152, 21);
+            this.textNome.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNome.Location = new System.Drawing.Point(238, 20);
             this.textNome.Margin = new System.Windows.Forms.Padding(2);
             this.textNome.Name = "textNome";
-            this.textNome.Size = new System.Drawing.Size(124, 20);
+            this.textNome.Size = new System.Drawing.Size(124, 23);
             this.textNome.TabIndex = 3;
             // 
             // textNif
             // 
-            this.textNif.Location = new System.Drawing.Point(152, 57);
+            this.textNif.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNif.Location = new System.Drawing.Point(238, 56);
             this.textNif.Margin = new System.Windows.Forms.Padding(2);
             this.textNif.Name = "textNif";
-            this.textNif.Size = new System.Drawing.Size(124, 20);
+            this.textNif.Size = new System.Drawing.Size(124, 23);
             this.textNif.TabIndex = 4;
             // 
             // textUsername
             // 
-            this.textUsername.Location = new System.Drawing.Point(152, 93);
+            this.textUsername.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textUsername.Location = new System.Drawing.Point(238, 92);
             this.textUsername.Margin = new System.Windows.Forms.Padding(2);
             this.textUsername.Name = "textUsername";
-            this.textUsername.Size = new System.Drawing.Size(124, 20);
+            this.textUsername.Size = new System.Drawing.Size(124, 23);
             this.textUsername.TabIndex = 5;
             // 
             // btnGravarFuncionario
             // 
+            this.btnGravarFuncionario.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGravarFuncionario.Location = new System.Drawing.Point(152, 150);
             this.btnGravarFuncionario.Margin = new System.Windows.Forms.Padding(2);
             this.btnGravarFuncionario.Name = "btnGravarFuncionario";
@@ -111,6 +121,7 @@ namespace Cantina.Forms
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(317, 201);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
@@ -122,15 +133,18 @@ namespace Cantina.Forms
             // 
             // listBoxFuncionarios
             // 
+            this.listBoxFuncionarios.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxFuncionarios.FormattingEnabled = true;
+            this.listBoxFuncionarios.ItemHeight = 16;
             this.listBoxFuncionarios.Location = new System.Drawing.Point(49, 243);
             this.listBoxFuncionarios.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxFuncionarios.Name = "listBoxFuncionarios";
-            this.listBoxFuncionarios.Size = new System.Drawing.Size(420, 95);
+            this.listBoxFuncionarios.Size = new System.Drawing.Size(420, 84);
             this.listBoxFuncionarios.TabIndex = 9;
             // 
             // btnInativarFuncionario
             // 
+            this.btnInativarFuncionario.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInativarFuncionario.Location = new System.Drawing.Point(268, 150);
             this.btnInativarFuncionario.Margin = new System.Windows.Forms.Padding(2);
             this.btnInativarFuncionario.Name = "btnInativarFuncionario";
@@ -142,6 +156,7 @@ namespace Cantina.Forms
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(96, 201);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
@@ -153,6 +168,7 @@ namespace Cantina.Forms
             // 
             // button4
             // 
+            this.button4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(210, 201);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
@@ -166,6 +182,7 @@ namespace Cantina.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
             this.ClientSize = new System.Drawing.Size(510, 386);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);

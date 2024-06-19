@@ -47,25 +47,29 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(257, 35);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(240, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(75, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Descrição:";
             // 
             // textDescricao
             // 
+            this.textDescricao.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textDescricao.Location = new System.Drawing.Point(321, 32);
             this.textDescricao.Name = "textDescricao";
-            this.textDescricao.Size = new System.Drawing.Size(100, 20);
+            this.textDescricao.Size = new System.Drawing.Size(100, 23);
             this.textDescricao.TabIndex = 2;
             // 
             // radioButtonCarne
             // 
             this.radioButtonCarne.AutoSize = true;
+            this.radioButtonCarne.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonCarne.Location = new System.Drawing.Point(27, 32);
             this.radioButtonCarne.Name = "radioButtonCarne";
-            this.radioButtonCarne.Size = new System.Drawing.Size(53, 17);
+            this.radioButtonCarne.Size = new System.Drawing.Size(63, 20);
             this.radioButtonCarne.TabIndex = 4;
             this.radioButtonCarne.TabStop = true;
             this.radioButtonCarne.Text = "Carne";
@@ -74,9 +78,10 @@
             // radioButtonPeixe
             // 
             this.radioButtonPeixe.AutoSize = true;
+            this.radioButtonPeixe.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonPeixe.Location = new System.Drawing.Point(97, 32);
             this.radioButtonPeixe.Name = "radioButtonPeixe";
-            this.radioButtonPeixe.Size = new System.Drawing.Size(51, 17);
+            this.radioButtonPeixe.Size = new System.Drawing.Size(59, 20);
             this.radioButtonPeixe.TabIndex = 5;
             this.radioButtonPeixe.TabStop = true;
             this.radioButtonPeixe.Text = "Peixe";
@@ -85,9 +90,10 @@
             // radioButtonVegetariano
             // 
             this.radioButtonVegetariano.AutoSize = true;
+            this.radioButtonVegetariano.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonVegetariano.Location = new System.Drawing.Point(154, 32);
             this.radioButtonVegetariano.Name = "radioButtonVegetariano";
-            this.radioButtonVegetariano.Size = new System.Drawing.Size(82, 17);
+            this.radioButtonVegetariano.Size = new System.Drawing.Size(105, 20);
             this.radioButtonVegetariano.TabIndex = 6;
             this.radioButtonVegetariano.TabStop = true;
             this.radioButtonVegetariano.Text = "Vegetariano";
@@ -95,6 +101,7 @@
             // 
             // btnGravar
             // 
+            this.btnGravar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGravar.Location = new System.Drawing.Point(343, 188);
             this.btnGravar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGravar.Name = "btnGravar";
@@ -106,6 +113,7 @@
             // 
             // btnEditarPrato
             // 
+            this.btnEditarPrato.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarPrato.Location = new System.Drawing.Point(229, 188);
             this.btnEditarPrato.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditarPrato.Name = "btnEditarPrato";
@@ -117,6 +125,7 @@
             // 
             // btnInativarPrato
             // 
+            this.btnInativarPrato.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInativarPrato.Location = new System.Drawing.Point(450, 137);
             this.btnInativarPrato.Margin = new System.Windows.Forms.Padding(2);
             this.btnInativarPrato.Name = "btnInativarPrato";
@@ -128,15 +137,18 @@
             // 
             // listBoxPratos
             // 
+            this.listBoxPratos.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxPratos.FormattingEnabled = true;
+            this.listBoxPratos.ItemHeight = 16;
             this.listBoxPratos.Location = new System.Drawing.Point(191, 258);
             this.listBoxPratos.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxPratos.Name = "listBoxPratos";
-            this.listBoxPratos.Size = new System.Drawing.Size(420, 82);
+            this.listBoxPratos.Size = new System.Drawing.Size(420, 68);
             this.listBoxPratos.TabIndex = 29;
             // 
             // btnVoltarMenu
             // 
+            this.btnVoltarMenu.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVoltarMenu.Location = new System.Drawing.Point(450, 188);
             this.btnVoltarMenu.Margin = new System.Windows.Forms.Padding(2);
             this.btnVoltarMenu.Name = "btnVoltarMenu";
@@ -148,6 +160,7 @@
             // 
             // btnGravarPrato
             // 
+            this.btnGravarPrato.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGravarPrato.Location = new System.Drawing.Point(229, 137);
             this.btnGravarPrato.Margin = new System.Windows.Forms.Padding(2);
             this.btnGravarPrato.Name = "btnGravarPrato";
@@ -159,6 +172,7 @@
             // 
             // btnExcluir
             // 
+            this.btnExcluir.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.Location = new System.Drawing.Point(343, 137);
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(2);
             this.btnExcluir.Name = "btnExcluir";
@@ -173,6 +187,8 @@
             this.groupBoxTipo.Controls.Add(this.radioButtonVegetariano);
             this.groupBoxTipo.Controls.Add(this.radioButtonCarne);
             this.groupBoxTipo.Controls.Add(this.radioButtonPeixe);
+            this.groupBoxTipo.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxTipo.ForeColor = System.Drawing.Color.White;
             this.groupBoxTipo.Location = new System.Drawing.Point(253, 58);
             this.groupBoxTipo.Name = "groupBoxTipo";
             this.groupBoxTipo.Size = new System.Drawing.Size(259, 74);
@@ -184,6 +200,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBoxTipo);
             this.Controls.Add(this.btnGravar);

@@ -85,7 +85,7 @@
             this.btnMultas.Image = global::Cantina.Properties.Resources.multa;
             this.btnMultas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMultas.Location = new System.Drawing.Point(11, 443);
-            this.btnMultas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMultas.Margin = new System.Windows.Forms.Padding(2);
             this.btnMultas.Name = "btnMultas";
             this.btnMultas.Size = new System.Drawing.Size(200, 40);
             this.btnMultas.TabIndex = 12;
@@ -105,7 +105,7 @@
             this.btnPratos.Image = global::Cantina.Properties.Resources.pratos2;
             this.btnPratos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPratos.Location = new System.Drawing.Point(11, 125);
-            this.btnPratos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPratos.Margin = new System.Windows.Forms.Padding(2);
             this.btnPratos.Name = "btnPratos";
             this.btnPratos.Size = new System.Drawing.Size(200, 40);
             this.btnPratos.TabIndex = 11;
@@ -124,7 +124,7 @@
             this.btnLogout.Image = global::Cantina.Properties.Resources.logout;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogout.Location = new System.Drawing.Point(2, 612);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(59, 60);
             this.btnLogout.TabIndex = 2;
@@ -143,7 +143,7 @@
             this.btnReservas.Image = global::Cantina.Properties.Resources.reserva;
             this.btnReservas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReservas.Location = new System.Drawing.Point(11, 284);
-            this.btnReservas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReservas.Margin = new System.Windows.Forms.Padding(2);
             this.btnReservas.Name = "btnReservas";
             this.btnReservas.Size = new System.Drawing.Size(200, 40);
             this.btnReservas.TabIndex = 9;
@@ -163,7 +163,7 @@
             this.btnMenus.Image = global::Cantina.Properties.Resources.menu;
             this.btnMenus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenus.Location = new System.Drawing.Point(11, 231);
-            this.btnMenus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMenus.Margin = new System.Windows.Forms.Padding(2);
             this.btnMenus.Name = "btnMenus";
             this.btnMenus.Size = new System.Drawing.Size(200, 40);
             this.btnMenus.TabIndex = 8;
@@ -183,7 +183,7 @@
             this.btnExtras.Image = global::Cantina.Properties.Resources.extra;
             this.btnExtras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExtras.Location = new System.Drawing.Point(11, 178);
-            this.btnExtras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExtras.Margin = new System.Windows.Forms.Padding(2);
             this.btnExtras.Name = "btnExtras";
             this.btnExtras.Size = new System.Drawing.Size(200, 40);
             this.btnExtras.TabIndex = 10;
@@ -203,7 +203,7 @@
             this.btnClientes.Image = global::Cantina.Properties.Resources.icons8_client_management_50;
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes.Location = new System.Drawing.Point(11, 337);
-            this.btnClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClientes.Margin = new System.Windows.Forms.Padding(2);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(200, 40);
             this.btnClientes.TabIndex = 7;
@@ -216,11 +216,11 @@
             this.funcionarioUsername.AutoSize = true;
             this.funcionarioUsername.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.funcionarioUsername.ForeColor = System.Drawing.Color.White;
-            this.funcionarioUsername.Location = new System.Drawing.Point(41, 88);
+            this.funcionarioUsername.Location = new System.Drawing.Point(29, 88);
             this.funcionarioUsername.Name = "funcionarioUsername";
-            this.funcionarioUsername.Size = new System.Drawing.Size(97, 19);
+            this.funcionarioUsername.Size = new System.Drawing.Size(169, 19);
             this.funcionarioUsername.TabIndex = 5;
-            this.funcionarioUsername.Text = "Bem-Vindo, ";
+            this.funcionarioUsername.Text = "Bem-Vindo,  Utilizador";
             // 
             // pictureBox1
             // 
@@ -243,7 +243,7 @@
             this.btnFuncionarios.Image = global::Cantina.Properties.Resources.icons8_management_50;
             this.btnFuncionarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFuncionarios.Location = new System.Drawing.Point(11, 390);
-            this.btnFuncionarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFuncionarios.Margin = new System.Windows.Forms.Padding(2);
             this.btnFuncionarios.Name = "btnFuncionarios";
             this.btnFuncionarios.Size = new System.Drawing.Size(200, 40);
             this.btnFuncionarios.TabIndex = 0;
@@ -302,7 +302,7 @@
             this.monthCalendar1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.monthCalendar1.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
             this.monthCalendar1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monthCalendar1.Location = new System.Drawing.Point(546, 144);
+            this.monthCalendar1.Location = new System.Drawing.Point(556, 114);
             this.monthCalendar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 6;
@@ -311,17 +311,18 @@
             // 
             this.listaMenus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listaMenus.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.listaMenus.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listaMenus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaMenus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCarne,
             this.colPeixe,
             this.colVegetariano});
-            this.listaMenus.Location = new System.Drawing.Point(431, 347);
-            this.listaMenus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listaMenus.Location = new System.Drawing.Point(345, 342);
+            this.listaMenus.Margin = new System.Windows.Forms.Padding(2);
             this.listaMenus.Name = "listaMenus";
             this.listaMenus.RowHeadersWidth = 82;
             this.listaMenus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listaMenus.Size = new System.Drawing.Size(480, 118);
+            this.listaMenus.Size = new System.Drawing.Size(737, 262);
             this.listaMenus.TabIndex = 8;
             // 
             // colCarne
@@ -350,7 +351,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

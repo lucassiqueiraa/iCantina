@@ -139,5 +139,12 @@ namespace Cantina
             formMultas.Show();
             this.Hide();
         }
+
+        private void btnReservas_Click(object sender, EventArgs e)
+        {
+            FormReservas formReservas = new FormReservas();
+            formReservas.Show();
+            this.Hide();
+        }
     }
 }

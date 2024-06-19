@@ -34,6 +34,8 @@
             this.listBoxMenus = new System.Windows.Forms.ListBox();
             this.listBoxExtras = new System.Windows.Forms.ListBox();
             this.btnReservarMenu = new System.Windows.Forms.Button();
+            this.labelNomeCliente = new System.Windows.Forms.Label();
+            this.labelSaldoCliente = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnBuscarClientePorNif
@@ -66,7 +68,7 @@
             // 
             this.listBoxMenus.FormattingEnabled = true;
             this.listBoxMenus.ItemHeight = 25;
-            this.listBoxMenus.Location = new System.Drawing.Point(31, 124);
+            this.listBoxMenus.Location = new System.Drawing.Point(57, 300);
             this.listBoxMenus.Name = "listBoxMenus";
             this.listBoxMenus.Size = new System.Drawing.Size(747, 154);
             this.listBoxMenus.TabIndex = 3;
@@ -76,14 +78,14 @@
             // 
             this.listBoxExtras.FormattingEnabled = true;
             this.listBoxExtras.ItemHeight = 25;
-            this.listBoxExtras.Location = new System.Drawing.Point(31, 310);
+            this.listBoxExtras.Location = new System.Drawing.Point(57, 486);
             this.listBoxExtras.Name = "listBoxExtras";
             this.listBoxExtras.Size = new System.Drawing.Size(747, 129);
             this.listBoxExtras.TabIndex = 4;
             // 
             // btnReservarMenu
             // 
-            this.btnReservarMenu.Location = new System.Drawing.Point(282, 484);
+            this.btnReservarMenu.Location = new System.Drawing.Point(308, 660);
             this.btnReservarMenu.Name = "btnReservarMenu";
             this.btnReservarMenu.Size = new System.Drawing.Size(165, 80);
             this.btnReservarMenu.TabIndex = 5;
@@ -91,11 +93,31 @@
             this.btnReservarMenu.UseVisualStyleBackColor = true;
             this.btnReservarMenu.Click += new System.EventHandler(this.btnReservarMenu_Click);
             // 
+            // labelNomeCliente
+            // 
+            this.labelNomeCliente.AutoSize = true;
+            this.labelNomeCliente.Location = new System.Drawing.Point(40, 137);
+            this.labelNomeCliente.Name = "labelNomeCliente";
+            this.labelNomeCliente.Size = new System.Drawing.Size(181, 25);
+            this.labelNomeCliente.TabIndex = 6;
+            this.labelNomeCliente.Text = "labelNomeCliente";
+            // 
+            // labelSaldoCliente
+            // 
+            this.labelSaldoCliente.AutoSize = true;
+            this.labelSaldoCliente.Location = new System.Drawing.Point(303, 137);
+            this.labelSaldoCliente.Name = "labelSaldoCliente";
+            this.labelSaldoCliente.Size = new System.Drawing.Size(180, 25);
+            this.labelSaldoCliente.TabIndex = 7;
+            this.labelSaldoCliente.Text = "labelSaldoCliente";
+            // 
             // FormReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 821);
+            this.Controls.Add(this.labelSaldoCliente);
+            this.Controls.Add(this.labelNomeCliente);
             this.Controls.Add(this.btnReservarMenu);
             this.Controls.Add(this.listBoxExtras);
             this.Controls.Add(this.listBoxMenus);
@@ -117,5 +139,7 @@
         private System.Windows.Forms.ListBox listBoxMenus;
         private System.Windows.Forms.ListBox listBoxExtras;
         private System.Windows.Forms.Button btnReservarMenu;
+        private System.Windows.Forms.Label labelNomeCliente;
+        private System.Windows.Forms.Label labelSaldoCliente;
     }
 }

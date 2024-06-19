@@ -69,7 +69,7 @@
             this.panel2.Controls.Add(this.btnFuncionarios);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 65);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(450, 1089);
             this.panel2.TabIndex = 4;
@@ -86,7 +86,7 @@
             this.btnMultas.Image = global::Cantina.Properties.Resources.multa;
             this.btnMultas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMultas.Location = new System.Drawing.Point(22, 852);
-            this.btnMultas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMultas.Margin = new System.Windows.Forms.Padding(4);
             this.btnMultas.Name = "btnMultas";
             this.btnMultas.Size = new System.Drawing.Size(400, 77);
             this.btnMultas.TabIndex = 12;
@@ -106,7 +106,7 @@
             this.btnPratos.Image = global::Cantina.Properties.Resources.pratos2;
             this.btnPratos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPratos.Location = new System.Drawing.Point(22, 240);
-            this.btnPratos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPratos.Margin = new System.Windows.Forms.Padding(4);
             this.btnPratos.Name = "btnPratos";
             this.btnPratos.Size = new System.Drawing.Size(400, 77);
             this.btnPratos.TabIndex = 11;
@@ -124,7 +124,7 @@
             this.btnLogout.Image = global::Cantina.Properties.Resources.logout;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogout.Location = new System.Drawing.Point(4, 967);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(118, 115);
             this.btnLogout.TabIndex = 2;
@@ -143,12 +143,13 @@
             this.btnReservas.Image = global::Cantina.Properties.Resources.reserva;
             this.btnReservas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReservas.Location = new System.Drawing.Point(22, 546);
-            this.btnReservas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReservas.Margin = new System.Windows.Forms.Padding(4);
             this.btnReservas.Name = "btnReservas";
             this.btnReservas.Size = new System.Drawing.Size(400, 77);
             this.btnReservas.TabIndex = 9;
             this.btnReservas.Text = "Reservas";
             this.btnReservas.UseVisualStyleBackColor = false;
+            this.btnReservas.Click += new System.EventHandler(this.btnReservas_Click);
             // 
             // btnMenus
             // 
@@ -162,7 +163,7 @@
             this.btnMenus.Image = global::Cantina.Properties.Resources.menu;
             this.btnMenus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenus.Location = new System.Drawing.Point(22, 444);
-            this.btnMenus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenus.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenus.Name = "btnMenus";
             this.btnMenus.Size = new System.Drawing.Size(400, 77);
             this.btnMenus.TabIndex = 8;
@@ -182,7 +183,7 @@
             this.btnExtras.Image = global::Cantina.Properties.Resources.extra;
             this.btnExtras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExtras.Location = new System.Drawing.Point(22, 342);
-            this.btnExtras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExtras.Margin = new System.Windows.Forms.Padding(4);
             this.btnExtras.Name = "btnExtras";
             this.btnExtras.Size = new System.Drawing.Size(400, 77);
             this.btnExtras.TabIndex = 10;
@@ -202,7 +203,7 @@
             this.btnClientes.Image = global::Cantina.Properties.Resources.icons8_client_management_50;
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes.Location = new System.Drawing.Point(22, 648);
-            this.btnClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClientes.Margin = new System.Windows.Forms.Padding(4);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(400, 77);
             this.btnClientes.TabIndex = 7;
@@ -226,7 +227,7 @@
             // 
             this.pictureBox1.Image = global::Cantina.Properties.Resources.team;
             this.pictureBox1.Location = new System.Drawing.Point(116, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 181);
             this.pictureBox1.TabIndex = 6;
@@ -244,7 +245,7 @@
             this.btnFuncionarios.Image = global::Cantina.Properties.Resources.icons8_management_50;
             this.btnFuncionarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFuncionarios.Location = new System.Drawing.Point(22, 750);
-            this.btnFuncionarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFuncionarios.Margin = new System.Windows.Forms.Padding(4);
             this.btnFuncionarios.Name = "btnFuncionarios";
             this.btnFuncionarios.Size = new System.Drawing.Size(400, 77);
             this.btnFuncionarios.TabIndex = 0;
@@ -286,7 +287,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2200, 65);
             this.panel1.TabIndex = 3;
@@ -322,7 +323,7 @@
             this.colPeixe,
             this.colVegetariano});
             this.listaMenus.Location = new System.Drawing.Point(862, 667);
-            this.listaMenus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listaMenus.Margin = new System.Windows.Forms.Padding(4);
             this.listaMenus.Name = "listaMenus";
             this.listaMenus.RowHeadersWidth = 82;
             this.listaMenus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -358,7 +359,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

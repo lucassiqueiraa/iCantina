@@ -176,6 +176,9 @@
     <EmbeddedResource Include="Forms\FormProfessor.resx">
       <DependentUpon>FormProfessor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormReservas.resx">
+      <DependentUpon>FormReservas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>

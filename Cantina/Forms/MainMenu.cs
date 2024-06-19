@@ -1,14 +1,18 @@
-﻿using Cantina.Forms;
+﻿using Cantina.Data;
+using Cantina.Forms;
+using Cantina.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Cantina
 {
@@ -18,7 +22,56 @@ namespace Cantina
         public MainMenu()
         {
             InitializeComponent();
+            monthCalendar1.DateChanged += monthCalendar1_DateChanged;
+
+            // Configurar colunas do DataGridView
+            listaMenus.Columns.Clear();
+            listaMenus.Columns.Add("colCarne", "Carne");
+            listaMenus.Columns.Add("colPeixe", "Peixe");
+            listaMenus.Columns.Add("colVegetariano", "Vegetariano");
         }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            // Limpa as informações anteriores
+            listaMenus.Rows.Clear();
+
+            // Busca os menus do banco de dados para o dia selecionado
+            DateTime selectedDate = e.Start;
+            var menus = GetMenusFromDatabase(selectedDate);
+
+            // Supondo que 'menus' seja uma lista de objetos Menu
+            foreach (var menu in menus)
+            {
+                var carne = menu.Pratos.FirstOrDefault(p => p.Tipo == "Carne");
+                var peixe = menu.Pratos.FirstOrDefault(p => p.Tipo == "Peixe");
+                var vegetariano = menu.Pratos.FirstOrDefault(p => p.Tipo == "Vegetariano");
+
+                listaMenus.Rows.Add(
+                    carne != null ? carne.Descricao : "",
+                    peixe != null ? peixe.Descricao : "",
+                    vegetariano != null ? vegetariano.Descricao : ""
+                );
+            }
+        }
+
+
+        private List<Cantina.Models.Menu> GetMenusFromDatabase(DateTime date)
+        {
+            using (var context = new CantinaContext())
+            {
+                var menus = context.Menus
+                    .Include(m => m.Pratos) // Garante que os pratos sejam incluídos na consulta
+                    .Include(m => m.Extras) // Garante que os extras sejam incluídos na consulta
+                    .Where(m => DbFunctions.TruncateTime(m.DataHora) == date.Date)
+                    .ToList();
+
+                return menus;
+            }
+        }
+
+
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);

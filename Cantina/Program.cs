@@ -17,19 +17,10 @@
             [STAThread]
             static void Main()
             {
-                using (var db = new CantinaContext())
-                {
-                    var extra = new Extra { Id = 1, Descricao = "Sopa Espinafre", Preco = 0.50M , Ativo = true };
-                    db.Extras.Add(extra);
-                    db.SaveChanges();
-                }
-
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-            
 
-            
             }
         }
     }

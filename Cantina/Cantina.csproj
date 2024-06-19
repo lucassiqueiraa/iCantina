@@ -170,6 +170,9 @@
     <EmbeddedResource Include="Forms\FormMultas.resx">
       <DependentUpon>FormMultas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPratos.resx">
+      <DependentUpon>FormPratos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormProfessor.resx">
       <DependentUpon>FormProfessor.cs</DependentUpon>
     </EmbeddedResource>

@@ -139,5 +139,12 @@ namespace Cantina
             formMultas.Show();
             this.Hide();
         }
+
+        private void btnPratos_Click(object sender, EventArgs e)
+        {
+            FormPratos formPratos = new FormPratos();
+            formPratos.Show();
+            this.Hide();
+        }
     }
 }

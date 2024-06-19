@@ -121,7 +121,16 @@ namespace Cantina
 
         private void btnExtras_Click(object sender, EventArgs e)
         {
-           
+           FormExtras formExtras = new FormExtras();
+           formExtras.Show();
+           this.Hide();
+        }
+
+        private void btnMenus_Click(object sender, EventArgs e)
+        {
+            FormMenu menu = new FormMenu();
+            menu.Show();
+            this.Hide();
         }
     }
 }

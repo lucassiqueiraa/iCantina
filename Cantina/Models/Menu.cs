@@ -13,7 +13,14 @@ namespace Cantina.Models
         public int QtdDisponivel { get; set; }
         public decimal PrecoEstudante { get; set; }
         public decimal PrecoProfessor { get; set; }
-        public virtual ICollection<Prato> Pratos { get; set; }
-        public virtual ICollection<Extra> Extras { get; set; }
+        public virtual ICollection<Prato> Pratos { get; set; } = new List<Prato>();
+        public virtual ICollection<Extra> Extras { get; set; } = new List<Extra>();
+
+        public Menu()
+        {
+            Pratos = new List<Prato>();
+            Extras = new List<Extra>();
+        }
     }
+    
 }
